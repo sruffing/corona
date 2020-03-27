@@ -5,9 +5,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "next export",
+    "s3-deploy": "./node_modules/.bin/deploy-aws-s3-cloudfront -q --bucket sdr-corona-test --source out"
   },
   "dependencies": {
+    "aws-sdk": "^2.648.0",
+    "deploy-aws-s3-cloudfront": "^2.3.1",
     "next": "9.3.2",
     "react": "16.13.1",
     "react-dom": "16.13.1"
