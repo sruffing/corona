@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import TimeChart from '../component/TimeChart'
 
 const Home = () => (
   <div className="container">
@@ -14,6 +15,7 @@ const Home = () => (
 
       <div>
         Info
+        <TimeChart/>
       </div>
     </main>
 

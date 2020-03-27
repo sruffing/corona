@@ -12,6 +12,8 @@
   "dependencies": {
     "aws-sdk": "^2.648.0",
     "deploy-aws-s3-cloudfront": "^2.3.1",
+    "highcharts": "^8.0.4",
+    "highcharts-react-official": "^3.0.0",
     "next": "9.3.2",
     "react": "16.13.1",
     "react-dom": "16.13.1"
