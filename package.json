@@ -7,15 +7,19 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "s3-deploy": "./node_modules/.bin/deploy-aws-s3-cloudfront -q --bucket sdr-corona-test --source out"
+    "s3-deploy": "./node_modules/.bin/deploy-aws-s3-cloudfront -q --bucket sdr-corona-test --source out",
+    "update-data": "node scripts/updateData.js"
   },
   "dependencies": {
     "aws-sdk": "^2.648.0",
+    "bootstrap": "^4.4.1",
     "deploy-aws-s3-cloudfront": "^2.3.1",
+    "download": "^7.1.0",
     "highcharts": "^8.0.4",
     "highcharts-react-official": "^3.0.0",
     "next": "9.3.2",
     "react": "16.13.1",
+    "react-bootstrap": "^1.0.0",
     "react-dom": "16.13.1"
   }
 }

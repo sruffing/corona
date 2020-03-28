@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>
+    
+Novel Coronavirus 2019 - Dataset
+
+    - DataHub - Frictionless Data
+  </title>
+  <meta name="author" content="Datopian">
+  <meta name="keywords" content="data,open data,datasets,public data,data package,reference data,csv,json,excel">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@datahubio" />
+  <meta name="twitter:title" content="Novel Coronavirus 2019" />
+  <meta name="twitter:image" content="https://datahub.io/core/covid-19/view/0.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Novel Coronavirus 2019" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="DataHub" />
+  <meta property="og:image" content="https://datahub.io/core/covid-19/view/0.png" />
+  <meta property="og:image:alt" content="DataHub" />
+  <meta property="fb:app_id" content="188583668435715" />
+
+  
+  <meta name="description" content="Coronavirus disease 2019 (COVID-19) time series listing confirmed cases, reported deaths and reported recoveries. Data is disaggregated by country (and sometimes subregion). Coronavirus disease (COVID-19) is caused by the Severe acute respiratory syndrome Coronavirus 2 (SARS-CoV-2) and has had a" />
+  <meta name="twitter:description" content="Coronavirus disease 2019 (COVID-19) time series listing confirmed cases, reported deaths and reported recoveries. Data is disaggregated by country (and sometimes subregion). Coronavirus disease (COVID-19) is caused by the Severe acute respiratory syndrome Coronavirus 2 (SARS-CoV-2) and has had a" />
+  <meta property="og:description" content="Coronavirus disease 2019 (COVID-19) time series listing confirmed cases, reported deaths and reported recoveries. Data is disaggregated by country (and sometimes subregion). Coronavirus disease (COVID-19) is caused by the Severe acute respiratory syndrome Coronavirus 2 (SARS-CoV-2) and has had a" />
+  
+
+
+  <link rel="icon" type="img/ico" href="/static/img/favicon.ico" sizes="16x16">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WCTXGJ8');</script>
+  <!-- End Google Tag Manager -->
+  <!-- Minimize page flickering -->
+  <style>.async-hide { opacity: 0 !important} </style>
+  <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+  h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+  (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+  })(window,document.documentElement,'async-hide','dataLayer',1000,
+  {'GTM-WCTXGJ8':true});</script>
+  <!-- End Minimize page flickering -->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-80458846-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-80458846-4');
+  </script>
+
+  <!--  Google Analytics - End -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" media="screen" href="/static/stylesheets/app.css">
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.css">
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body class="showcase">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WCTXGJ8"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+    <div class="banner" style="margin-bottom:0; font-size: 14px;">
+      <div>
+        DataHub.io by <a href="https://datopian.com/"><img src="https://www.datopian.com/img/datopian-logo.png" style="height: 24px; padding-bottom: 4px; padding-left: 3px; padding-right: 3px;" /></a> &mdash;
+        We build solutions that unleash the potential of data <i class="fas fa-rocket" aria-hidden="true"></i> Let's start with yours! <a href="https://datopian.com/contact/" style="font-weight: 600; text-decoration:underline;">Get in touch now &raquo;</a>
+      </div>
+    </div>
+    <!-- Page header -->
+    <div class="navbar navbar-default">
+      <div class="container">
+        <div class="inner_container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="main-logo pull-left" href="/">
+              <img class="img-responsive" src="/static/img/datahub-cube-edited.svg">
+            </a>
+          </div>
+          <!--
+          <div class="nav navbar-nav searchbox">
+            <form class="form-inline" action="/search" method="GET">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Find data" name="q">
+              </div>
+            </form>
+          </div>
+          -->
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <a href="/docs/about">About</a>
+              </li>
+              <li>
+                <a href="/blog">Blog</a>
+              </li>
+              <li>
+                <a href="/search" class="find-data join-link">Find data</a>
+              </li>
+              <li>
+                <a href="/collections">Collections</a>
+              </li>
+              <li>
+                <a href="/docs">Docs</a>
+              </li>
+              <li>
+                <a href="/pricing">Pricing</a>
+              </li>
+              <li>
+                <a href="/download">Tools</a>
+              </li>
+              <li>
+                <a href="https://gitter.im/datahubio/chat" class="chat" target="_blank">Chat</a>
+              </li>
+  						<!--
+              <li>
+                <a href="/">DISCOVER</a>
+              </li>
+  						-->
+              
+                <li>
+                  <a href="/login">Login</a>
+                </li>
+                <li>
+                  <a href="/login" class="join-link">Join free</a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div><!-- End of page header -->
+
+    
+
+    
+<!-- Load goodtables-ui so we can use it in the body of this page. -->
+<script src="https://unpkg.com/goodtables-ui@1.1.3/dist/goodtables-ui.min.js"></script>
+
+<!-- Premium data offer -->
+
+<div class="container">
+  <div class="inner_container">
+
+
+    <!-- Modal -->
+    <div class="modal-new modal fade" id="premium-data" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h3 class="modal-title" id="myModalLabel"><img src="/static/img/text-msg.png" class="title-img"/> Premium data offer</h3>
+          </div>
+          <div class="modal-body">
+            <iframe src="/premium-data" width="100%" height="550px" frameborder="0"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Bottom Area to show the alert -->
+    <div class="stripe-ribbon" id="showcase-offer">
+      <p>Now you can request additional data and/or customized columns! </p>
+      <a href="#premium-data" data-toggle="modal" data-target="#premium-data" class="premium-data-link" onclick="dataLayer.push({'premium-data-link': 'sticky-btm-bar'})">Try It Now!</a>
+    </div>
+
+<!-- End of Premium data offer -->
+
+<!-- title and owner info -->
+<div class="container">
+  <div class="inner_container">
+    
+
+    
+    
+
+    <!-- Show notice if any of reports is invalid -->
+    
+
+    <div class="showcase-page-header">
+      <h1>
+        Novel Coronavirus 2019
+        
+
+        
+      </h1>
+
+      
+      <p class="clearfix"></p>
+
+      <p class="publisher">
+        <img src="https://www.gravatar.com/avatar/core?d=https%3A%2F%2Ftesting.datahub.io%2Fstatic%2Fimg%2Flogo-cube03.png" class="img-responsive img-circle avatar" />
+        <a href="/core">core</a>
+      </p>
+    </div>
+  </div>
+</div><!-- end of title and owner info -->
+
+<div class="container-no-top-padding">
+  <div class="inner_container">
+    <div class="dataset show">
+      <!-- info about data package -->
+      <div>
+        <table class="table info no-left-padding">
+          <thead>
+            <tr>
+              <th>Files</th>
+              <th>Size</th>
+              <th>Format</th>
+              <th>Created</th>
+              <th>Updated</th>
+              <th>License</th>
+              <th>Source</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-xs-1">5</td>
+              <td class="col-xs-1">545kB</td>
+              <td class="col-xs-2 format-list">
+                
+                  csv
+                
+                  zip
+                
+              </td>
+              <td class="col-xs-2">5 days ago</td>
+              <td class="col-xs-2">4 hours ago</td>
+              <td class="col-xs-2">
+                
+              </td>
+              <td class="col-xs-2">
+                
+              </td>
+            </tr>
+          </tbody>
+
+        </table>
+
+      </div>
+
+      <!-- short readme -->
+      
+        <div class="readme-snippet readable-width">Coronavirus disease 2019 (COVID-19) time series listing confirmed cases, reported deaths and reported recoveries. Data is disaggregated by country (and sometimes subregion). Coronavirus disease (COVID-19) is caused by the Severe acute respiratory syndrome Coronavirus 2 (SARS-CoV-2) and has had a <a href="#readme" onclick="scrollDown(this)">read more</a></div>
+      
+
+      <!-- download button -->
+      <a href="#data" class="btn btn-lg btn-primary" onclick="scrollDown(this)">Download</a>
+      <!-- developers button -->
+      <a href="#data-cli" class="btn btn-lg btn-default" onclick="scrollDown(this)">Developers</a>
+
+      <!-- views -->
+      <div class="react-me part" data-type="data-views" id="next-section"></div>
+
+      <!-- data files (downloads) table -->
+      <h2 class="section-title" id="data">Data Files</h2>
+      <p>Download files in this dataset</p>
+      <div class="resource-listing part">
+        <table class="table table-condensed table-striped resource-listing">
+          <thead>
+            <th class="col-xs-2">File</th>
+            <th class="col-xs-4">Description</th>
+            <th class="col-xs-1">Size</th>
+            <th class="col-xs-2">Last changed</th>
+            <th class="col-xs-4">Download</th>
+          </thead>
+          <tbody>
+          
+            <tr>
+              <td class="col-xs-2">
+                <i class="far fa-file-alt"></i> <a href="#resource-time-series-19-covid-combined" onclick="scrollDown(this)" class="anchor-link" title="time-series-19-covid-combined">time-series-19-covid-combined</a>
+              </td>
+              <td class="col-xs-4" title="">
+                
+              </td>
+              <td class="col-xs-1" title="1MB">
+                1MB
+              </td>
+              <td class="col-xs-1" title="">
+                
+              </td>
+              <td class="download truncate col-xs-4">
+                <a href="/core/covid-19/r/time-series-19-covid-combined.csv">
+                  csv (1MB)
+                </a>
+                
+                ,
+                <a href="/core/covid-19/r/time-series-19-covid-combined.json">
+                  json (3MB)
+                </a>
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td class="col-xs-2">
+                <i class="far fa-file-alt"></i> <a href="#resource-key-countries-pivoted" onclick="scrollDown(this)" class="anchor-link" title="key-countries-pivoted">key-countries-pivoted</a>
+              </td>
+              <td class="col-xs-4" title="">
+                
+              </td>
+              <td class="col-xs-1" title="5kB">
+                5kB
+              </td>
+              <td class="col-xs-1" title="">
+                
+              </td>
+              <td class="download truncate col-xs-4">
+                <a href="/core/covid-19/r/key-countries-pivoted.csv">
+                  csv (5kB)
+                </a>
+                
+                ,
+                <a href="/core/covid-19/r/key-countries-pivoted.json">
+                  json (12kB)
+                </a>
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td class="col-xs-2">
+                <i class="far fa-file-alt"></i> <a href="#resource-countries-aggregated" onclick="scrollDown(this)" class="anchor-link" title="countries-aggregated">countries-aggregated</a>
+              </td>
+              <td class="col-xs-4" title="">
+                
+              </td>
+              <td class="col-xs-1" title="575kB">
+                575kB
+              </td>
+              <td class="col-xs-1" title="">
+                
+              </td>
+              <td class="download truncate col-xs-4">
+                <a href="/core/covid-19/r/countries-aggregated.csv">
+                  csv (575kB)
+                </a>
+                
+                ,
+                <a href="/core/covid-19/r/countries-aggregated.json">
+                  json (1MB)
+                </a>
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td class="col-xs-2">
+                <i class="far fa-file-alt"></i> <a href="#resource-worldwide-aggregated" onclick="scrollDown(this)" class="anchor-link" title="worldwide-aggregated">worldwide-aggregated</a>
+              </td>
+              <td class="col-xs-4" title="">
+                
+              </td>
+              <td class="col-xs-1" title="5kB">
+                5kB
+              </td>
+              <td class="col-xs-1" title="">
+                
+              </td>
+              <td class="download truncate col-xs-4">
+                <a href="/core/covid-19/r/worldwide-aggregated.csv">
+                  csv (5kB)
+                </a>
+                
+                ,
+                <a href="/core/covid-19/r/worldwide-aggregated.json">
+                  json (9kB)
+                </a>
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <td class="col-xs-2">
+                <i class="far fa-file-alt"></i> <a href="#resource-covid-19_zip" onclick="scrollDown(this)" class="anchor-link" title="covid-19_zip">covid-19_zip</a>
+              </td>
+              <td class="col-xs-4" title="Compressed versions of dataset. Includes normalized CSV and JSON data with original data and datapackage.json.">
+                Compressed versions of dataset. Includes normalized CSV and JSON data with original data and datapackage.json.
+              </td>
+              <td class="col-xs-1" title="356kB">
+                356kB
+              </td>
+              <td class="col-xs-1" title="">
+                
+              </td>
+              <td class="download truncate col-xs-4">
+                <a href="/core/covid-19/r/covid-19_zip.zip">
+                  zip (356kB)
+                </a>
+                
+              </td>
+            </tr>
+          
+          </tbody>
+        </table>
+      </div>
+
+      <!-- preview + field information -->
+      
+      
+      <div class="resource-info part">
+        <!-- Heading for each resource -->
+        <h2 id="resource-time-series-19-covid-combined" class="section-title">
+          
+          time-series-19-covid-combined
+          
+          &nbsp;
+          <a href="/core/covid-19/r/time-series-19-covid-combined.csv">
+            <i class="far fa-arrow-alt-circle-down" aria-hidden="true" style="font-size:0.9em"></i>
+          </a>
+        </h2>
+        <!-- Render validation reports for each resource: -->
+        <div id="report-0"></div>
+
+        <script>
+          if ('{\&quot;time\&quot;:5.311,\&quot;valid\&quot;:true,\&quot;error-count\&quot;:0,\&quot;table-count\&quot;:1,\&quot;tables\&quot;:[{\&quot;time\&quot;:5.133,\&quot;valid\&quot;:true,\&quot;error-count\&quot;:0,\&quot;row-count\&quot;:1000,\&quot;source\&quot;:\&quot;https://s3.amazonaws.com/rawstore.datahub.io/a6cf143e0590042abb22025e558c2191.csv\&quot;,\&quot;headers\&quot;:[\&quot;Date\&quot;,\&quot;Country/Region\&quot;,\&quot;Province/State\&quot;,\&quot;Lat\&quot;,\&quot;Long\&quot;,\&quot;Confirmed\&quot;,\&quot;Deaths\&quot;],\&quot;scheme\&quot;:\&quot;https\&quot;,\&quot;format\&quot;:\&quot;csv\&quot;,\&quot;encoding\&quot;:\&quot;iso8859-1\&quot;,\&quot;schema\&quot;:\&quot;table-schema\&quot;,\&quot;errors\&quot;:[]}],\&quot;warnings\&quot;:[\&quot;Table https://s3.amazonaws.com/rawstore.datahub.io/a6cf143e0590042abb22025e558c2191.csv inspection has reached 1000 row(s) limit\&quot;],\&quot;preset\&quot;:\&quot;table\&quot;,\&quot;resource\&quot;:\&quot;time-series-19-covid-combined\&quot;}') {
+            var report = JSON.parse(`"{\\\"time\\\":5.311,\\\"valid\\\":true,\\\"error-count\\\":0,\\\"table-count\\\":1,\\\"tables\\\":[{\\\"time\\\":5.133,\\\"valid\\\":true,\\\"error-count\\\":0,\\\"row-count\\\":1000,\\\"source\\\":\\\"https://s3.amazonaws.com/rawstore.datahub.io/a6cf143e0590042abb22025e558c2191.csv\\\",\\\"headers\\\":[\\\"Date\\\",\\\"Country/Region\\\",\\\"Province/State\\\",\\\"Lat\\\",\\\"Long\\\",\\\"Confirmed\\\",\\\"Deaths\\\"],\\\"scheme\\\":\\\"https\\\",\\\"format\\\":\\\"csv\\\",\\\"encoding\\\":\\\"iso8859-1\\\",\\\"schema\\\":\\\"table-schema\\\",\\\"errors\\\":[]}],\\\"warnings\\\":[\\\"Table https://s3.amazonaws.com/rawstore.datahub.io/a6cf143e0590042abb22025e558c2191.csv inspection has reached 1000 row(s) limit\\\"],\\\"preset\\\":\\\"table\\\",\\\"resource\\\":\\\"time-series-19-covid-combined\\\"}"`);
+            report = JSON.parse(report);
+            var element = document.getElementById('report-0');
+            goodtablesUI.render(goodtablesUI.Report, {report}, element);
+          }
+          // Hide message about "goodtable.yml"
+          var errorDetailsLinks = document.getElementsByClassName('error-details-link');
+          for (var i=0; i<errorDetailsLinks.length; i++) {
+            errorDetailsLinks[i].onclick = function () {
+              setTimeout(function () {
+                var liTags = document.getElementsByTagName('li');
+                for (var i=0; i<liTags.length; i++) {
+                  if (liTags[i].textContent.includes('check in goodtables.yml')) {
+                    liTags[i].style.display = 'none';
+                  }
+                }
+              }, 10)
+            }
+          }
+        </script>
+        <!-- End of reports rendering -->
+
+        <!-- Premium Data Offer Link -->
+        
+        <div class="data-offer-txt">
+            <img src="/static/img/cube.png" />
+            <p> Signup to Premium Service for additional or customised data - <a href="#premium-data-2" data-toggle="modal" data-target="#premium-data" class="premium-data-link" onclick="dataLayer.push({'premium-data-link': 'inline-msg'})">Get Started</a></p>
+        </div>
+        
+
+        <!-- Placeholder div elements for React components: preview tables -->
+        <div id="resource-0" class="react-me tables"
+             data-type="resource-preview" data-resource="0"></div>
+        <!-- End of div elements for React -->
+        <p class="notice">
+          This is a preview version. There might be more data in <a href="/core/covid-19/r/time-series-19-covid-combined.csv">the original version.</a>
+        </p>
+        
+         <h3 class="section-title">Field information</h3>
+         <table class="table table-bordered table-striped resource-summary">
+           <thead>
+             <tr>
+               <th>Field Name</th>
+               <th>Order</th>
+               <th>Type (Format)</th>
+               <th>Description</th>
+             </tr>
+           </thead>
+           <tbody>
+             
+             <tr>
+               <th>Date</th>
+               <td>1</td>
+               <td class="type type-date">date (%Y-%m-%d) </td>
+               <td></td>
+             </tr>
+             
+             <tr>
+               <th>Country/Region</th>
+               <td>2</td>
+               <td class="type type-string">string (default) </td>
+               <td></td>
+             </tr>
+             
+             <tr>
+               <th>Province/State</th>
+               <td>3</td>
+               <td class="type type-string">string (default) </td>
+               <td></td>
+             </tr>
+             
+             <tr>
+               <th>Lat</th>
+               <td>4</td>
+               <td class="type type-number">number (default) </td>
+               <td></td>
+             </tr>
+             
+             <tr>
+               <th>Long</th>
+               <td>5</td>
+               <td class="type type-number">number (default) </td>
+               <td></td>
+             </tr>
+             
+             <tr>
+               <th>Confirmed</th>
+               <td>6</td>
+               <td class="type type-integer">integer (default) </td>
+               <td></td>
+             </tr>
+             
+             <tr>
+               <th>Deaths</th>
+               <td>7</td>
+               <td class="type type-integer">integer (default) </td>
+               <td></td>
+             </tr>
+             
+           </tbody>
+         </table>
+       
+      </div>
+      
+      
+      
+      <div class="resource-info part">
+        <!-- Heading for each resource -->
+        <h2 id="resource-key-countries-pivoted" class="section-title">
+          
+          key-countries-pivoted
+          
+          &nbsp;
+          <a href="/core/covid-19/r/key-countries-pivoted.csv">
+            <i class="far fa-arrow-alt-circle-down" aria-hidden="true" style="font-size:0.9em"></i>
+          </a>
+        </h2>
+        <!-- Render validation reports for each resource: -->
+        <div id="report-1"></div>
+
+        <script>
+          if ('{\&quot;time\&quot;:0.583,\&quot;valid\&quot;:true,\&quot;error-count\&quot;:0,\&quot;table-count\&quot;:1,\&quot;tables\&quot;:[{\&quot;time\&quot;:0.524,\&quot;valid\&quot;:true,\&quot;error-count\&quot;:0,\&quot;row-count\&quot;:66,\&quot;source\&quot;:\&quot;https://s3.amazonaws.com/rawstore.datahub.io/6272f42ef39cd13d6e6fa88e44b48f01.csv\&quot;,\&quot;headers\&quot;:[\&quot;Date\&quot;,\&quot;China\&quot;,\&quot;US\&quot;,\&quot;United_Kingdom\&quot;,\&quot;Italy\&quot;,\&quot;France\&quot;,\&quot;Germany\&quot;,\&quot;Spain\&quot;,\&quot;Iran\&quot;],\&quot;scheme\&quot;:\&quot;https\&quot;,\&quot;format\&quot;:\&quot;csv\&quot;,\&quot;encoding\&quot;:\&quot;iso8859-1\&quot;,\&quot;schema\&quot;:\&quot;table-schema\&quot;,\&quot;errors\&quot;:[]}],\&quot;warnings\&quot;:[],\&quot;preset\&quot;:\&quot;table\&quot;,\&quot;resource\&quot;:\&quot;key-countries-pivoted\&quot;}') {
+            var report = JSON.parse(`"{\\\"time\\\":0.583,\\\"valid\\\":true,\\\"error-count\\\":0,\\\"table-count\\\":1,\\\"tables\\\":[{\\\"time\\\":0.524,\\\"valid\\\":true,\\\"error-count\\\":0,\\\"row-count\\\":66,\\\"source\\\":\\\"https://s3.amazonaws.com/rawstore.datahub.io/6272f42ef39cd13d6e6fa88e44b48f01.csv\\\",\\\"headers\\\":[\\\"Date\\\",\\\"China\\\",\\\"US\\\",\\\"United_Kingdom\\\",\\\"Italy\\\",\\\"France\\\",\\\"Germany\\\",\\\"Spain\\\",\\\"Iran\\\"],\\\"scheme\\\":\\\"https\\\",\\\"format\\\":\\\"csv\\\",\\\"encoding\\\":\\\"iso8859-1\\\",\\\"schema\\\":\\\"table-schema\\\",\\\"errors\\\":[]}],\\\"warnings\\\":[],\\\"preset\\\":\\\"table\\\",\\\"resource\\\":\\\"key-countries-pivoted\\\"}"`);
+            report = JSON.parse(report);
+            var element = document.getElementById('report-1');
+            goodtablesUI.render(goodtablesUI.Report, {report}, element);
+          }
+          // Hide message about "goodtable.yml"
+          var errorDetailsLinks = document.getElementsByClassName('error-details-link');
+          for (var i=0; i<errorDetailsLinks.length; i++) {
+            errorDetailsLinks[i].onclick = function () {
+              setTimeout(function () {
+                var liTags = document.getElementsByTagName('li');
+                for (var i=0; i<liTags.length; i++) {
+                  if (liTags[i].textContent.includes('check in goodtables.yml')) {
+                    liTags[i].style.display = 'none';
+                  }
+                }
+              }, 10)
+            }
+          }
+        </script>
+        <!-- End of reports rendering -->
+
+        <!-- Premium Data Offer Link -->
+        
+        <div class="data-offer-txt">
+            <img src="/static/img/cube.png" />
+            <p> Signup to Premium Service for additional or customised data - <a href="#premium-data-2" data-toggle="modal" data-target="#premium-data" class="premium-data-link" onclick="dataLayer.push({'premium-data-link': 'inline-msg'})">Get Started</a></p>
+        </div>
+        
+
+        <!-- Placeholder div elements for React components: preview tables -->
+        <div id="resource-1" class="react-me tables"
+             data-type="resource-preview" data-resource="1"></div>
+        <!-- End of div elements for React -->
+        <p class="notice">
+          This is a preview version. There might be more data in <a href="/core/covid-19/r/key-countries-pivoted.csv">the original version.</a>
+        </p>
+        
+         <h3 class="section-title">Field information</h3>
+         <table class="table table-bordered table-striped resource-summary">
+           <thead>
+             <tr>
+               <th>Field Name</th>
+               <th>Order</th>
+               <th>Type (Format)</th>
+               <th>Description</th>
+             </tr>
+           </thead>
+           <tbody>
+             
+             <tr>
+               <th>Date</th>
+               <td>1</td>
+               <td class="type type-date">date (%Y-%m-%d) </td>
+               <td></td>
+             </tr>
+             
+             <tr>
+               <th>China</th>
+               <td>2</td>
+               <td class="type type-integer">integer </td>
+               <td>Cumulative total confirmed cases to date.</td>
+             </tr>
+             
+             <tr>
+               <th>US</th>
+               <td>3</td>
+               <td class="type type-integer">integer </td>
+               <td>Cumulative total confirmed cases to date.</td>
+             </tr>
+             
+             <tr>
+               <th>United_Kingdom</th>
+               <td>4</td>
+               <td class="type type-integer">integer </td>
+               <td>Cumulative total confirmed cases to date.</td>
+             </tr>
+             
+             <tr>
+               <th>Italy</th>
+               <td>5</td>
+               <td class="type type-integer">integer </td>
+               <td>Cumulative total confirmed cases to date.</td>
+             </tr>
+             
+             <tr>
+               <th>France</th>
+               <td>6</td>
+               <td class="type type-integer">integer </td>
+               <td>Cumulative total confirmed cases to date.</td>
+             </tr>
+             
+             <tr>
+               <th>Germany</th>
+               <td>7</td>
+               <td class="type type-integer">integer </td>
+               <td>Cumulative total confirmed cases to date.</td>
+             </tr>
+             
+             <tr>
+               <th>Spain</th>
+               <td>8</td>
+               <td class="type type-integer">integer </td>
+               <td>Cumulative total confirmed cases to date.</td>
+             </tr>
+             
+             <tr>
+               <th>Iran</th>
+               <td>9</td>
+               <td class="type type-integer">integer </td>
+               <td>Cumulative total confirmed cases to date.</td>
+             </tr>
+             
+           </tbody>
+         </table>
+       
+      </div>
+      
+      
+      
+      <div class="resource-info part">
+        <!-- Heading for each resource -->
+        <h2 id="resource-countries-aggregated" class="section-title">
+          
+          countries-aggregated
+          
+          &nbsp;
+          <a href="/core/covid-19/r/countries-aggregated.csv">
+            <i class="far fa-arrow-alt-circle-down" aria-hidden="true" style="font-size:0.9em"></i>
+          </a>
+        </h2>
+        <!-- Render validation reports for each resource: -->
+        <div id="report-2"></div>
+
+        <script>
+          if ('{\&quot;time\&quot;:1.993,\&quot;valid\&quot;:true,\&quot;error-count\&quot;:0,\&quot;table-count\&quot;:1,\&quot;tables\&quot;:[{\&quot;time\&quot;:1.943,\&quot;valid\&quot;:true,\&quot;error-count\&quot;:0,\&quot;row-count\&quot;:1000,\&quot;source\&quot;:\&quot;https://s3.amazonaws.com/rawstore.datahub.io/1fadc72466e5d884dcfb310111548e12.csv\&quot;,\&quot;headers\&quot;:[\&quot;Date\&quot;,\&quot;Country\&quot;,\&quot;Confirmed\&quot;,\&quot;Deaths\&quot;],\&quot;scheme\&quot;:\&quot;https\&quot;,\&quot;format\&quot;:\&quot;csv\&quot;,\&quot;encoding\&quot;:\&quot;iso8859-1\&quot;,\&quot;schema\&quot;:\&quot;table-schema\&quot;,\&quot;errors\&quot;:[]}],\&quot;warnings\&quot;:[\&quot;Table https://s3.amazonaws.com/rawstore.datahub.io/1fadc72466e5d884dcfb310111548e12.csv inspection has reached 1000 row(s) limit\&quot;],\&quot;preset\&quot;:\&quot;table\&quot;,\&quot;resource\&quot;:\&quot;countries-aggregated\&quot;}') {
+            var report = JSON.parse(`"{\\\"time\\\":1.993,\\\"valid\\\":true,\\\"error-count\\\":0,\\\"table-count\\\":1,\\\"tables\\\":[{\\\"time\\\":1.943,\\\"valid\\\":true,\\\"error-count\\\":0,\\\"row-count\\\":1000,\\\"source\\\":\\\"https://s3.amazonaws.com/rawstore.datahub.io/1fadc72466e5d884dcfb310111548e12.csv\\\",\\\"headers\\\":[\\\"Date\\\",\\\"Country\\\",\\\"Confirmed\\\",\\\"Deaths\\\"],\\\"scheme\\\":\\\"https\\\",\\\"format\\\":\\\"csv\\\",\\\"encoding\\\":\\\"iso8859-1\\\",\\\"schema\\\":\\\"table-schema\\\",\\\"errors\\\":[]}],\\\"warnings\\\":[\\\"Table https://s3.amazonaws.com/rawstore.datahub.io/1fadc72466e5d884dcfb310111548e12.csv inspection has reached 1000 row(s) limit\\\"],\\\"preset\\\":\\\"table\\\",\\\"resource\\\":\\\"countries-aggregated\\\"}"`);
+            report = JSON.parse(report);
+            var element = document.getElementById('report-2');
+            goodtablesUI.render(goodtablesUI.Report, {report}, element);
+          }
+          // Hide message about "goodtable.yml"
+          var errorDetailsLinks = document.getElementsByClassName('error-details-link');
+          for (var i=0; i<errorDetailsLinks.length; i++) {
+            errorDetailsLinks[i].onclick = function () {
+              setTimeout(function () {
+                var liTags = document.getElementsByTagName('li');
+                for (var i=0; i<liTags.length; i++) {
+                  if (liTags[i].textContent.includes('check in goodtables.yml')) {
+                    liTags[i].style.display = 'none';
+                  }
+                }
+              }, 10)
+            }
+          }
+        </script>
+        <!-- End of reports rendering -->
+
+        <!-- Premium Data Offer Link -->
+        
+        <div class="data-offer-txt">
+            <img src="/static/img/cube.png" />
+            <p> Signup to Premium Service for additional or customised data - <a href="#premium-data-2" data-toggle="modal" data-target="#premium-data" class="premium-data-link" onclick="dataLayer.push({'premium-data-link': 'inline-msg'})">Get Started</a></p>
+        </div>
+        
+
+        <!-- Placeholder div elements for React components: preview tables -->
+        <div id="resource-2" class="react-me tables"
+             data-type="resource-preview" data-resource="2"></div>
+        <!-- End of div elements for React -->
+        <p class="notice">
+          This is a preview version. There might be more data in <a href="/core/covid-19/r/countries-aggregated.csv">the original version.</a>
+        </p>
+        
+         <h3 class="section-title">Field information</h3>
+         <table class="table table-bordered table-striped resource-summary">
+           <thead>
+             <tr>
+               <th>Field Name</th>
+               <th>Order</th>
+               <th>Type (Format)</th>
+               <th>Description</th>
+             </tr>
+           </thead>
+           <tbody>
+             
+             <tr>
+               <th>Date</th>
+               <td>1</td>
+               <td class="type type-date">date (%Y-%m-%d) </td>
+               <td></td>
+             </tr>
+             
+             <tr>
+               <th>Country</th>
+               <td>2</td>
+               <td class="type type-string">string (default) </td>
+               <td></td>
+             </tr>
+             
+             <tr>
+               <th>Confirmed</th>
+               <td>3</td>
+               <td class="type type-integer">integer (default) </td>
+               <td></td>
+             </tr>
+             
+             <tr>
+               <th>Deaths</th>
+               <td>4</td>
+               <td class="type type-integer">integer (default) </td>
+               <td></td>
+             </tr>
+             
+           </tbody>
+         </table>
+       
+      </div>
+      
+      
+      
+      <div class="resource-info part">
+        <!-- Heading for each resource -->
+        <h2 id="resource-worldwide-aggregated" class="section-title">
+          
+          worldwide-aggregated
+          
+          &nbsp;
+          <a href="/core/covid-19/r/worldwide-aggregated.csv">
+            <i class="far fa-arrow-alt-circle-down" aria-hidden="true" style="font-size:0.9em"></i>
+          </a>
+        </h2>
+        <!-- Render validation reports for each resource: -->
+        <div id="report-3"></div>
+
+        <script>
+          if ('{\&quot;time\&quot;:0.448,\&quot;valid\&quot;:true,\&quot;error-count\&quot;:0,\&quot;table-count\&quot;:1,\&quot;tables\&quot;:[{\&quot;time\&quot;:0.372,\&quot;valid\&quot;:true,\&quot;error-count\&quot;:0,\&quot;row-count\&quot;:66,\&quot;source\&quot;:\&quot;https://s3.amazonaws.com/rawstore.datahub.io/ebd91daa70e3557df6ee7554b4353b1c.csv\&quot;,\&quot;headers\&quot;:[\&quot;Date\&quot;,\&quot;Confirmed\&quot;,\&quot;Deaths\&quot;,\&quot;Increase rate\&quot;],\&quot;scheme\&quot;:\&quot;https\&quot;,\&quot;format\&quot;:\&quot;csv\&quot;,\&quot;encoding\&quot;:\&quot;iso8859-2\&quot;,\&quot;schema\&quot;:\&quot;table-schema\&quot;,\&quot;errors\&quot;:[]}],\&quot;warnings\&quot;:[],\&quot;preset\&quot;:\&quot;table\&quot;,\&quot;resource\&quot;:\&quot;worldwide-aggregated\&quot;}') {
+            var report = JSON.parse(`"{\\\"time\\\":0.448,\\\"valid\\\":true,\\\"error-count\\\":0,\\\"table-count\\\":1,\\\"tables\\\":[{\\\"time\\\":0.372,\\\"valid\\\":true,\\\"error-count\\\":0,\\\"row-count\\\":66,\\\"source\\\":\\\"https://s3.amazonaws.com/rawstore.datahub.io/ebd91daa70e3557df6ee7554b4353b1c.csv\\\",\\\"headers\\\":[\\\"Date\\\",\\\"Confirmed\\\",\\\"Deaths\\\",\\\"Increase rate\\\"],\\\"scheme\\\":\\\"https\\\",\\\"format\\\":\\\"csv\\\",\\\"encoding\\\":\\\"iso8859-2\\\",\\\"schema\\\":\\\"table-schema\\\",\\\"errors\\\":[]}],\\\"warnings\\\":[],\\\"preset\\\":\\\"table\\\",\\\"resource\\\":\\\"worldwide-aggregated\\\"}"`);
+            report = JSON.parse(report);
+            var element = document.getElementById('report-3');
+            goodtablesUI.render(goodtablesUI.Report, {report}, element);
+          }
+          // Hide message about "goodtable.yml"
+          var errorDetailsLinks = document.getElementsByClassName('error-details-link');
+          for (var i=0; i<errorDetailsLinks.length; i++) {
+            errorDetailsLinks[i].onclick = function () {
+              setTimeout(function () {
+                var liTags = document.getElementsByTagName('li');
+                for (var i=0; i<liTags.length; i++) {
+                  if (liTags[i].textContent.includes('check in goodtables.yml')) {
+                    liTags[i].style.display = 'none';
+                  }
+                }
+              }, 10)
+            }
+          }
+        </script>
+        <!-- End of reports rendering -->
+
+        <!-- Premium Data Offer Link -->
+        
+        <div class="data-offer-txt">
+            <img src="/static/img/cube.png" />
+            <p> Signup to Premium Service for additional or customised data - <a href="#premium-data-2" data-toggle="modal" data-target="#premium-data" class="premium-data-link" onclick="dataLayer.push({'premium-data-link': 'inline-msg'})">Get Started</a></p>
+        </div>
+        
+
+        <!-- Placeholder div elements for React components: preview tables -->
+        <div id="resource-3" class="react-me tables"
+             data-type="resource-preview" data-resource="3"></div>
+        <!-- End of div elements for React -->
+        <p class="notice">
+          This is a preview version. There might be more data in <a href="/core/covid-19/r/worldwide-aggregated.csv">the original version.</a>
+        </p>
+        
+         <h3 class="section-title">Field information</h3>
+         <table class="table table-bordered table-striped resource-summary">
+           <thead>
+             <tr>
+               <th>Field Name</th>
+               <th>Order</th>
+               <th>Type (Format)</th>
+               <th>Description</th>
+             </tr>
+           </thead>
+           <tbody>
+             
+             <tr>
+               <th>Date</th>
+               <td>1</td>
+               <td class="type type-date">date (%Y-%m-%d) </td>
+               <td></td>
+             </tr>
+             
+             <tr>
+               <th>Confirmed</th>
+               <td>2</td>
+               <td class="type type-integer">integer (default) </td>
+               <td></td>
+             </tr>
+             
+             <tr>
+               <th>Deaths</th>
+               <td>3</td>
+               <td class="type type-integer">integer (default) </td>
+               <td></td>
+             </tr>
+             
+             <tr>
+               <th>Increase rate</th>
+               <td>4</td>
+               <td class="type type-number">number </td>
+               <td>Inrease rate from the previous day in percentage.</td>
+             </tr>
+             
+           </tbody>
+         </table>
+       
+      </div>
+      
+      
+      
+      <!-- Placeholder div elements for React components: preview tables -->
+      <div id="resource-4" class="react-me tables"
+           data-type="resource-preview" data-resource="4"></div>
+      <!-- End of div elements for React -->
+      
+      
+
+      <!-- Similar datasets -->
+      
+      <!-- End of Similar datasets -->
+
+
+      <!-- Search -->
+      <section class="similar-search hidden-xs hidden-sm">
+        <div class="row">
+            <div class="col-sm-1">
+                <div class="icon pull-left shadow">
+                    <img src="/static/img/icon-search.png" class="img-responsive"/>
+                </div>
+            </div>
+            <div class="col-sm-6">
+              <h3>Not found what you're looking for?</h3>
+              <p>You can search over a thousand datasets on datahub</p>
+            </div>
+            <div class="col-sm-5">
+                <!-- searchbox -->
+                <form class="search-form form form-inline" class="input-group col-xs-12" action="/search" method="GET">
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control input-lg" placeholder="Search ..." name="q" required />
+                  </div>
+                  <div class="col-sm-3">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                  </div>
+      
+                </form>
+                <!-- search box ended -->
+            </div>
+        </div>
+      </section>
+      <!-- end of search -->
+
+    </div>
+  </div>
+</div>
+
+<!-- import into your tool section -->
+<div class="section-gray">
+  <div class="container">
+    <div class="inner_container">
+      <div class="dataset show">
+        <h2 class="section-title">Integrate this dataset into your favourite tool</h2>
+        <ul class="nav nav-pills">
+          <li class="active"><a data-toggle="pill" href="#data-cli">data-cli</a></li>
+          <li><a data-toggle="pill" href="#curl">cURL</a></li>
+          <li><a data-toggle="pill" href="#r">R</a></li>
+          <li><a data-toggle="pill" href="#pandas">Pandas</a></li>
+          <li><a data-toggle="pill" href="#python">Python</a></li>
+          <li><a data-toggle="pill" href="#javascript">JavaScript</a></li>
+        </ul>
+        <!-- content for instructions -->
+        <div class="tab-content">
+
+          <div id="data-cli" class="tab-pane fade in active">
+            <div class="part">
+              <p>
+  Use our <a href="/download">data-cli</a> tool designed for data wranglers:
+</p>
+
+<pre class="hljs"><code><span class="hljs-keyword">data get </span><span class="hljs-string">https://datahub.io/core/covid-19</span>
+<span class="hljs-keyword">data info </span><span class="hljs-string">core/covid-19</span>
+<span class="hljs-keyword">tree </span><span class="hljs-string">core/covid-19</span>
+</code></pre>
+            </div>
+          </div>
+
+          <div id="curl" class="tab-pane fade">
+            <div class="part">
+              <pre class="hljs"><code><span class="hljs-comment"># Get a list of dataset's resources</span>
+<span class="hljs-keyword">curl</span> -L -s <span class="hljs-string">https://datahub.io/core/covid-19/datapackage.json</span> | <span class="hljs-keyword">grep</span> path
+
+<span class="hljs-comment"># Get resources</span>
+
+<span class="hljs-keyword">curl </span><span class="hljs-string">-L https://datahub.io/core/covid-19/r/0.csv</span>
+
+<span class="hljs-keyword">curl </span><span class="hljs-string">-L https://datahub.io/core/covid-19/r/1.csv</span>
+
+<span class="hljs-keyword">curl </span><span class="hljs-string">-L https://datahub.io/core/covid-19/r/2.csv</span>
+
+<span class="hljs-keyword">curl </span><span class="hljs-string">-L https://datahub.io/core/covid-19/r/3.csv</span>
+
+<span class="hljs-keyword">curl </span><span class="hljs-string">-L https://datahub.io/core/covid-19/r/4.zip</span>
+
+</code></pre>
+            </div>
+          </div>
+
+          <div id="r" class="tab-pane fade">
+            <div class="part">
+              <p>If you are using R here's how to get the data you want quickly loaded:</p>
+<pre class="hljs"><code>install.packages(<span class="hljs-string">"jsonlite", repos="https://cran.rstudio.com/"</span>)
+<span class="hljs-keyword">library</span>(<span class="hljs-string">"jsonlite"</span>)
+
+json_file &lt;- <span class="hljs-string">'https://datahub.io/core/covid-19/datapackage.json'</span>
+json_data &lt;- fromJSON(paste(readLines(json_file), collapse=<span class="hljs-string">""</span>))
+
+<span class="hljs-comment"># get list of all resources:</span>
+print(json_data$resources$name)
+
+<span class="hljs-comment"># print all tabular data(if exists any)</span>
+<span class="hljs-keyword">for</span>(i <span class="hljs-keyword">in</span> <span class="hljs-number">1</span>:length(json_data$resources$datahub$type)){
+  <span class="hljs-keyword">if</span>(json_data$resources$datahub$type[i]==<span class="hljs-string">'derived/csv'</span>){
+    path_to_file = json_data$resources$path[i]
+    data &lt;- read.csv(url(path_to_file))
+    print(data)
+  }
+}
+</code></pre>
+<p><i><strong>Note:</strong> You might need to run the script with root permissions if you are running on Linux machine</i></p>
+            </div>
+          </div>
+
+          <div id="pandas" class="tab-pane fade">
+            <div class="part">
+              <p>Install the Frictionless Data data package library and the pandas itself:</p>
+<pre class="hljs"><code>pip install datapackage
+pip install pandas
+</code></pre>
+
+<p>Now you can use the datapackage in the Pandas:</p>
+
+<pre class="hljs"><code><span class="hljs-keyword">import</span> datapackage
+<span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+
+data_url = <span class="hljs-string">'https://datahub.io/core/covid-19/datapackage.json'</span>
+
+<span class="hljs-comment"># to load Data Package into storage</span>
+package = datapackage.Package(data_url)
+
+<span class="hljs-comment"># to load only tabular data</span>
+resources = package.resources
+<span class="hljs-keyword">for</span> resource <span class="hljs-keyword">in</span> resources:
+    <span class="hljs-keyword">if</span> resource.tabular:
+        data = pd.read_csv(resource.descriptor[<span class="hljs-string">'path'</span>])
+        <span class="hljs-keyword">print</span> (data)
+</code></pre>
+            </div>
+          </div>
+
+          <div id="python" class="tab-pane fade">
+            <div class="part">
+              <p>For Python, first install the `datapackage` library (all the datasets on DataHub are Data Packages):</p>
+
+<pre class="hljs"><code>pip install datapackage
+</code></pre>
+
+<p>To get Data Package into your Python environment, run following code:</p>
+
+<pre class="hljs"><code><span class="hljs-keyword">from</span> datapackage <span class="hljs-keyword">import</span> Package
+
+package = Package(<span class="hljs-string">'https://datahub.io/core/covid-19/datapackage.json'</span>)
+
+<span class="hljs-comment"># print list of all resources:</span>
+<span class="hljs-keyword">print</span>(package.resource_names)
+
+<span class="hljs-comment"># print processed tabular data (if exists any)</span>
+<span class="hljs-keyword">for</span> resource <span class="hljs-keyword">in</span> package.resources:
+    <span class="hljs-keyword">if</span> resource.descriptor['datahub']['type'] == 'derived/csv':
+        <span class="hljs-keyword">print</span>(resource.read())
+</code></pre>
+            </div>
+          </div>
+
+          <div id="javascript" class="tab-pane fade">
+            <div class="part">
+              <p>If you are using JavaScript, please, follow instructions below:</p>
+<p>Install <code>data.js</code> module using <code>npm</code>:</p>
+<p>
+  <pre class="hljs">  <code>$ npm install data.js
+</code></pre>
+</p>
+<p>Once the package is installed, use the following code snippet:</p>
+<pre class="hljs"><code><span class="hljs-keyword">const</span> {Dataset} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'data.js'</span>)
+
+<span class="hljs-keyword">const</span> path = <span class="hljs-string">'https://datahub.io/core/covid-19/datapackage.json'</span>
+
+<span class="hljs-comment">// We're using self-invoking function here as we want to use async-await syntax:</span>
+;<span class="hljs-function">(<span class="hljs-params"><span class="hljs-keyword">async</span> (</span>) =&gt;</span> {
+  <span class="hljs-keyword">const</span> dataset = <span class="hljs-keyword">await</span> Dataset.load(path)
+  <span class="hljs-comment">// get list of all resources:</span>
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> id <span class="hljs-keyword">in</span> dataset.resources) {
+    <span class="hljs-built_in">console</span>.log(dataset.resources[id]._descriptor.name)
+  }
+  <span class="hljs-comment">// get all tabular data(if exists any)</span>
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> id <span class="hljs-keyword">in</span> dataset.resources) {
+    <span class="hljs-keyword">if</span> (dataset.resources[id]._descriptor.format === <span class="hljs-string">"csv"</span>) {
+      <span class="hljs-keyword">const</span> file = dataset.resources[id]
+      <span class="hljs-comment">// Get a raw stream</span>
+      <span class="hljs-keyword">const</span> stream = <span class="hljs-keyword">await</span> file.stream()
+      <span class="hljs-comment">// entire file as a buffer (be careful with large files!)</span>
+      <span class="hljs-keyword">const</span> buffer = <span class="hljs-keyword">await</span> file.buffer
+      <span class="hljs-comment">// print data</span>
+      stream.pipe(process.stdout)
+    }
+  }
+})()
+</code></pre>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- end of import into your tool section -->
+
+<!-- readme section -->
+
+<div class="container">
+  <div class="inner_container">
+    <div class="dataset show">
+      <h2 id="readme" class="section-title">Read me</h2>
+      <div class="readme part readable-width"><p>Coronavirus disease 2019 (COVID-19) time series listing confirmed cases, reported deaths and reported recoveries. Data is disaggregated by country (and sometimes subregion). Coronavirus disease (COVID-19) is caused by the <a href="https://en.wikipedia.org/wiki/Severe_acute_respiratory_syndrome_coronavirus_2">Severe acute respiratory syndrome Coronavirus 2 (SARS-CoV-2)</a> and has had a worldwide effect. On March 11 2020, the World Health Organization (WHO) declared it a pandemic, pointing to the over 118,000 cases of the coronavirus illness in over 110 countries and territories around the world at the time.</p>
+<p>This dataset includes time series data tracking the number of people affected by COVID-19 worldwide, including:</p>
+<ul>
+<li>confirmed tested cases of Coronavirus infection</li>
+<li>the number of people who have reportedly died while sick with Coronavirus</li>
+<li>the number of people who have reportedly recovered from it</li>
+</ul>
+<h2>Data <a class="header-anchor" href="#data"><i class="fas fa-link"></i></a></h2>
+<p>Data is in CSV format and updated daily. It is sourced from <a href="https://github.com/CSSEGISandData/COVID-19">this upstream repository</a> maintained by the amazing team at <a href="https://systems.jhu.edu/">Johns Hopkins University Center for Systems Science and Engineering</a> (CSSE) who have been doing a great public service from an early point by collating data from around the world.</p>
+<p>We have cleaned and normalized that data, for example tidying dates and consolidating several files into normalized time series. We have also added some metadata such as column descriptions and <a href="https://frictionlessdata.io/data-package/">data packaged it</a>.</p>
+<p>You can view the data, its structure as well as download it in alternative formats (e.g. JSON) from the DataHub:</p>
+<p><a href="https://datahub.io/core/covid-19">https://datahub.io/core/covid-19</a></p>
+<h3>Sources <a class="header-anchor" href="#sources"><i class="fas fa-link"></i></a></h3>
+<p>The upstream dataset currently lists the following upstream datasources:</p>
+<ul>
+<li>World Health Organization (WHO): <a href="https://www.who.int/">https://www.who.int/</a></li>
+<li><a href="http://DXY.cn">DXY.cn</a>. Pneumonia. 2020. <a href="http://3g.dxy.cn/newh5/view/pneumonia">http://3g.dxy.cn/newh5/view/pneumonia</a></li>
+<li>BNO News: <a href="https://bnonews.com/index.php/2020/02/the-latest-coronavirus-cases/">https://bnonews.com/index.php/2020/02/the-latest-coronavirus-cases/</a></li>
+<li>National Health Commission of the People’s Republic of China (NHC): <a href="http://www.nhc.gov.cn/xcs/yqtb/list_gzbd.shtml">http://www.nhc.gov.cn/xcs/yqtb/list_gzbd.shtml</a></li>
+<li>China CDC (CCDC): <a href="http://weekly.chinacdc.cn/news/TrackingtheEpidemic.htm">http://weekly.chinacdc.cn/news/TrackingtheEpidemic.htm</a></li>
+<li>Hong Kong Department of Health: <a href="https://www.chp.gov.hk/en/features/102465.html">https://www.chp.gov.hk/en/features/102465.html</a></li>
+<li>Macau Government: <a href="https://www.ssm.gov.mo/portal/">https://www.ssm.gov.mo/portal/</a></li>
+<li>Taiwan CDC: <a href="https://sites.google.com/cdc.gov.tw/2019ncov/taiwan?authuser=0">https://sites.google.com/cdc.gov.tw/2019ncov/taiwan?authuser=0</a></li>
+<li>US CDC: <a href="https://www.cdc.gov/coronavirus/2019-ncov/index.html">https://www.cdc.gov/coronavirus/2019-ncov/index.html</a></li>
+<li>Government of Canada: <a href="https://www.canada.ca/en/public-health/services/diseases/coronavirus.html">https://www.canada.ca/en/public-health/services/diseases/coronavirus.html</a></li>
+<li>Australia Government Department of Health: <a href="https://www.health.gov.au/news/coronavirus-update-at-a-glance">https://www.health.gov.au/news/coronavirus-update-at-a-glance</a></li>
+<li>European Centre for Disease Prevention and Control (ECDC): <a href="https://www.ecdc.europa.eu/en/geographical-distribution-2019-ncov-cases">https://www.ecdc.europa.eu/en/geographical-distribution-2019-ncov-cases</a></li>
+<li>Ministry of Health Singapore (MOH): <a href="https://www.moh.gov.sg/covid-19">https://www.moh.gov.sg/covid-19</a></li>
+<li>Italy Ministry of Health: <a href="http://www.salute.gov.it/nuovocoronavirus">http://www.salute.gov.it/nuovocoronavirus</a></li>
+</ul>
+<p>We will endeavour to provide more detail on how regularly and by which technical means the data is updated. Additional background is available in the <a href="https://systems.jhu.edu/research/public-health/ncov/">CSSE blog</a>, and in the <a href="https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(20)30120-1/fulltext">Lancet paper</a> (<a href="https://doi.org/10.1016/S1473-3099(20)30120-1">DOI</a>), which includes this figure:</p>
+<p><img src="https://i.imgur.com/X32lUEU.png" alt /></p>
+<h2>Preparation <a class="header-anchor" href="#preparation"><i class="fas fa-link"></i></a></h2>
+<p>This repository uses <a href="https://github.com/datahq/dataflows">dataflows</a> to process and normalize the data.</p>
+<p>You first need to install the dependencies:</p>
+<pre class="hljs"><code>pip install -r scripts/requirements.txt
+</code></pre>
+<p>Then run the script</p>
+<pre class="hljs"><code>python scripts/process.py
+</code></pre>
+<p><a href="https://www.python.org/downloads/release/python-360/"><img src="https://img.shields.io/badge/python-3.6-blue.svg" alt="Python 3.6" /></a>
+<img src="https://github.com/datasets/covid-19/workflows/.github/workflows/actions.yml/badge.svg?branch=master" alt=".github/workflows/actions.yml" /></p>
+<h2>License <a class="header-anchor" href="#license"><i class="fas fa-link"></i></a></h2>
+<p>This dataset is licensed under the Open Data Commons <a href="https://www.opendatacommons.org/licenses/pddl/1-0/">Public Domain and Dedication License</a>.</p>
+<p>The data comes from a variety public sources and was collated in the first instance via Johns Hopkins University on GitHub. We have used that data and processed it further. Given the public sources and factual nature we believe that there the data is public domain and are therefore releasing the results under the Public Domain Dedication and License. We are also, of course, explicitly licensing any contribution of ours under that license.</p>
+</div>
+    </div>
+  </div>
+</div>
+<!-- end of readme section -->
+
+
+<!-- Link to datapackage.json - putting here to be hidden for now -->
+<div class="container">
+  <div class="inner_container">
+    <a href="/core/covid-19/datapackage.json" class="btn btn-default" style="margin-top:-80px">Datapackage.json</a>
+  </div>
+</div><!-- end of link to datapackage.json -->
+
+
+<div class="container premium_dataoffer">
+  <div class="inner_container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h3>Request Customized Data</h3>
+            <br/>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 col-sm-6">
+            <div class="card">
+                <div class="icon pull-left shadow">
+                    <img src="/static/img/data-offer-icon-1.png" class="img-responsive"/>
+                </div>
+                <p>Notifications of data updates and schema changes</p>
+            </div>
+            <p class="clearfix"></p>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+            <div class="card">
+                <div class="icon pull-left shadow">
+                    <img src="/static/img/data-offer-icon-2.png" class="img-responsive"/>
+                </div>
+                <p>Warranty / guaranteed updates</p>
+            </div>
+            <p class="clearfix"></p>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+            <div class="card">
+                <div class="icon pull-left shadow">
+                    <img src="/static/img/data-offer-icon-3.png" class="img-responsive"/>
+                </div>
+                <p>Workflow integration (e.g. Python packages, NPM packages)</p>
+            </div>
+            <p class="clearfix"></p>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+            <div class="card">
+                <div class="icon pull-left shadow">
+                    <img src="/static/img/data-offer-icon-4.png" class="img-responsive"/>
+                </div>
+                <p>Customized data (e.g. you need different or additional data)</p>
+            </div>
+            <p class="clearfix"></p>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+            <div class="card">
+                <div class="icon pull-left shadow">
+                    <img src="/static/img/data-offer-icon-5.png" class="img-responsive"/>
+                </div>
+                <p>Or suggest your own feature from the link below</p>
+            </div>
+            <p class="clearfix"></p>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+          <a href="#premium-data-3" data-toggle="modal" data-target="#premium-data" class="btn btn-primary premium-data-link" onclick="dataLayer.push({'premium-data-link': 'separate-section'})">Try It Now</a> <br/>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+    <!-- Footer Sections -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-3">
+                    <img class="img-responsive" src="/static/img/datahub-cube-edited.svg" width=60>
+                    <br/>
+                    <p>At Datahub, we provide various solutions to Publish and Deploy your Data with power and simplicity. Datahub is the fastest way for individuals, teams and organizations to publish, deploy and share their data.</p>
+                </div>
+
+                <div class="col-sm-3 col-md-2 col-md-offset-1">
+                    <label>Links</label>
+                    <ul>
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <a href="/docs/terms-of-service">Terms of Service</a>
+                          </li>
+                        <li>
+                            <a href="/docs/privacy">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="https://docs.datahub.io/developers/api/">API</a>
+                        </li>
+                        <li>
+                            <a href="/blog">Blog</a>
+                        </li>
+                        <li>
+                            <a href="https://old.datahub.io" target="_blank">Old DataHub</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-2">
+                    <label>Support</label>
+                    <ul>
+                        <li>
+                            <a href="https://gitter.im/datahubio/chat">Chat</a>
+                        </li>
+                        <li>
+                            <a href="/docs/faq">FAQ</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-3 col-md-2 col-md-offset-1">
+                    <label>Contact</label>
+                    <ul>
+                        <li>
+                            <a href="/cdn-cgi/l/email-protection#2c5f595c5c435e586c484d584d44594e024543"><span class="__cf_email__" data-cfemail="96e5e3e6e6f9e4e2d6f2f7e2f7fee3f4b8fff9">[email&#160;protected]</span></a>
+                        </li>
+                        <!-- <li>
+                            <a href="#">+44 xxx xxxx</a>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="footer-bottom">
+            <div class="container pad-top-0">
+                <div class="row">
+                    <div class="col-sm-8 text-left col-md-4">
+                        <p>&copy; 2018 All Rights Reserved </p>
+                    </div>
+                    <div class="col-sm-12 col-md-7 col-md-offset-1 footer-logos">
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <a href="https://datopian.com/" target="_blank">
+                            <img src="/static/img/datopian-logo.png" class="img-responsive" />
+                          </a>
+                        </div>
+                        <div class="col-sm-3">
+                          <a href="https://okfn.org/" target="_blank">
+                            <img src="/static/img/okfn-new-logo.png" class="img-responsive" />
+                          </a>
+                        </div>
+                        <div class="col-sm-3">
+                          <a href="https://www.sloan.org/" target="_blank">
+                            <img src="/static/img/sloan-foundation.png" class="img-responsive" />
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- <div class="col-sm-4 social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div> -->
+                </div>
+            </div>
+	</div>
+  <!-- end of footer -->
+
+
+
+  
+<!-- Function for reading query params -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  function getURLParameter(sParam) {
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++) {
+      var sParameterName = sURLVariables[i].split('=');
+      if (sParameterName[0] == sParam) {
+          return sParameterName[1];
+      }
+    }
+  }
+</script>
+<!-- script for tabs to work as anchors (used for instructions in showcase page) -->
+<script>
+  jQuery("ul.nav-pills > li > a").on("shown.bs.tab", function (e) {
+     scrollposition = jQuery(document).scrollTop();
+     var id = jQuery(e.target).attr("href").substr(1);
+     window.location.hash = id;
+     jQuery(document).scrollTop(scrollposition);
+  });
+  var hash = window.location.hash;
+  jQuery('.nav.nav-pills a[href="' + hash + '"]').tab('show', function() {
+      jQuery(document).scrollTop();
+  });
+
+
+  //Slide out function for showcase
+  $(window).on('load', function() {
+    $("#showcase-offer").animate({
+      bottom:0
+    },1000);
+   });
+
+   function goToSearch() {
+    var query = document.getElementById('search-input').value;
+    window.location.href = '/search?q=' + query;
+  }
+</script>
+
+<!-- pass DP_ID to front-end -->
+<script type="text/javascript">
+  var DP_ID = JSON.parse('{"bytes":1032270,"count_of_rows":27625,"datahub":{"created":"5 days ago","findability":"published","flowid":"core/covid-19/27","hash":"e3ade660bd139ae8e4dd826037e532e0","modified":"4 hours ago","owner":"core","ownerid":"core","stats":{"bytes":10151935,"rowcount":27625,"prettyBytes":"10MB"},"modifiedISO":"2020-03-27T18:09:55.534023","createdISO":"2020-03-22T16:03:58.514457"},"hash":"62a57614b38fb3a136aa0b5a22ee7db1","id":"core/covid-19","name":"covid-19","profile":"data-package","readme":"Coronavirus disease 2019 (COVID-19) time series listing confirmed cases, reported deaths and reported recoveries. Data is disaggregated by country (and sometimes subregion). Coronavirus disease (COVID-19) is caused by the [Severe acute respiratory syndrome Coronavirus 2 (SARS-CoV-2)][sars2] and has had a worldwide effect. On March 11 2020, the World Health Organization (WHO) declared it a pandemic, pointing to the over 118,000 cases of the coronavirus illness in over 110 countries and territories around the world at the time.\\n\\n[covid]: https://en.wikipedia.org/wiki/Coronavirus_disease_2019\\n[sars2]: https://en.wikipedia.org/wiki/Severe_acute_respiratory_syndrome_coronavirus_2\\n\\nThis dataset includes time series data tracking the number of people affected by COVID-19 worldwide, including:\\n\\n* confirmed tested cases of Coronavirus infection\\n* the number of people who have reportedly died while sick with Coronavirus\\n* the number of people who have reportedly recovered from it\\n\\n## Data\\n\\nData is in CSV format and updated daily. It is sourced from [this upstream repository](https://github.com/CSSEGISandData/COVID-19) maintained by the amazing team at [Johns Hopkins University Center for Systems Science and Engineering](https://systems.jhu.edu/) (CSSE) who have been doing a great public service from an early point by collating data from around the world.\\n\\nWe have cleaned and normalized that data, for example tidying dates and consolidating several files into normalized time series. We have also added some metadata such as column descriptions and [data packaged it][dp].\\n\\nYou can view the data, its structure as well as download it in alternative formats (e.g. JSON) from the DataHub:\\n\\nhttps://datahub.io/core/covid-19\\n\\n[dp]: https://frictionlessdata.io/data-package/\\n\\n### Sources\\n\\nThe upstream dataset currently lists the following upstream datasources:\\n\\n- World Health Organization (WHO): https://www.who.int/\\n- DXY.cn. Pneumonia. 2020. http://3g.dxy.cn/newh5/view/pneumonia\\n- BNO News: https://bnonews.com/index.php/2020/02/the-latest-coronavirus-cases/\\n- National Health Commission of the People’s Republic of China (NHC): http://www.nhc.gov.cn/xcs/yqtb/list_gzbd.shtml\\n- China CDC (CCDC): http://weekly.chinacdc.cn/news/TrackingtheEpidemic.htm\\n- Hong Kong Department of Health: https://www.chp.gov.hk/en/features/102465.html\\n- Macau Government: https://www.ssm.gov.mo/portal/\\n- Taiwan CDC: https://sites.google.com/cdc.gov.tw/2019ncov/taiwan?authuser=0\\n- US CDC: https://www.cdc.gov/coronavirus/2019-ncov/index.html\\n- Government of Canada: https://www.canada.ca/en/public-health/services/diseases/coronavirus.html\\n- Australia Government Department of Health: https://www.health.gov.au/news/coronavirus-update-at-a-glance\\n- European Centre for Disease Prevention and Control (ECDC): https://www.ecdc.europa.eu/en/geographical-distribution-2019-ncov-cases\\n- Ministry of Health Singapore (MOH): https://www.moh.gov.sg/covid-19\\n- Italy Ministry of Health: http://www.salute.gov.it/nuovocoronavirus\\n\\nWe will endeavour to provide more detail on how regularly and by which technical means the data is updated. Additional background is available in the [CSSE blog](https://systems.jhu.edu/research/public-health/ncov/), and in the [Lancet paper](https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(20)30120-1/fulltext) ([DOI](https://doi.org/10.1016/S1473-3099(20)30120-1)), which includes this figure:\\n\\n![](https://i.imgur.com/X32lUEU.png)\\n\\n## Preparation\\n\\nThis repository uses [dataflows](https://github.com/datahq/dataflows) to process and normalize the data.\\n\\nYou first need to install the dependencies:\\n\\n```\\npip install -r scripts/requirements.txt\\n```\\n\\nThen run the script\\n\\n```\\npython scripts/process.py\\n```\\n\\n[![Python 3.6](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/downloads/release/python-360/)\\n![.github/workflows/actions.yml](https://github.com/datasets/covid-19/workflows/.github/workflows/actions.yml/badge.svg?branch=master)\\n\\n## License\\n\\nThis dataset is licensed under the Open Data Commons [Public Domain and Dedication License][pddl].\\n\\n[pddl]: https://www.opendatacommons.org/licenses/pddl/1-0/\\n\\nThe data comes from a variety public sources and was collated in the first instance via Johns Hopkins University on GitHub. We have used that data and processed it further. Given the public sources and factual nature we believe that there the data is public domain and are therefore releasing the results under the Public Domain Dedication and License. We are also, of course, explicitly licensing any contribution of ours under that license.\\n\\n","resources":[{"bytes":1465158,"datahub":{"derivedFrom":["time-series-19-covid-combined"],"type":"derived/csv"},"delimiter":",","dialect":{"caseSensitiveHeader":false,"delimiter":",","doubleQuote":true,"header":true,"lineTerminator":"\\r\\n","quoteChar":"\\"","skipInitialSpace":false},"dpp:streamedFrom":"https://s3.amazonaws.com/rawstore.datahub.io/a6cf143e0590042abb22025e558c2191.csv","encoding":"utf-8","format":"csv","hash":"0e19819c40014068ad1a1de38e3e6573","mediatype":"text/csv","name":"time-series-19-covid-combined","path":"https://pkgstore.datahub.io/core/covid-19/time-series-19-covid-combined_csv/data/0e19819c40014068ad1a1de38e3e6573/time-series-19-covid-combined_csv.csv","pathType":"local","profile":"tabular-data-resource","quotechar":"\\"","rowcount":16120,"schema":{"fields":[{"format":"%Y-%m-%d","name":"Date","type":"date"},{"format":"default","name":"Country/Region","type":"string"},{"format":"default","name":"Province/State","type":"string"},{"decimalChar":".","format":"default","groupChar":"","name":"Lat","type":"number"},{"decimalChar":".","format":"default","groupChar":"","name":"Long","type":"number"},{"format":"default","groupChar":"","name":"Confirmed","title":"Cumulative total confirmed cases to date","type":"integer"},{"format":"default","groupChar":"","name":"Deaths","title":"Cumulative total deaths to date","type":"integer"}],"missingValues":["None",""]},"signed":true,"title":"","description":"","alternates":[{"bytes":732579,"datahub":{"type":"source/tabular"},"delimiter":",","dialect":{"caseSensitiveHeader":false,"delimiter":",","doubleQuote":true,"header":true,"lineTerminator":"\\r\\n","quoteChar":"\\"","skipInitialSpace":false},"dpp:streamedFrom":"https://s3.amazonaws.com/rawstore.datahub.io/a6cf143e0590042abb22025e558c2191.csv","encoding":"ISO-8859-1","format":"csv","hash":"a6cf143e0590042abb22025e558c2191","mediatype":"text/csv","name":"time-series-19-covid-combined","path":"https://pkgstore.datahub.io/core/covid-19/time-series-19-covid-combined/archive/a6cf143e0590042abb22025e558c2191/time-series-19-covid-combined.csv","pathType":"local","profile":"tabular-data-resource","quotechar":"\\"","schema":{"fields":[{"format":"%Y-%m-%d","name":"Date","type":"date"},{"format":"default","name":"Country/Region","type":"string"},{"format":"default","name":"Province/State","type":"string"},{"decimalChar":".","format":"default","groupChar":"","name":"Lat","type":"number"},{"decimalChar":".","format":"default","groupChar":"","name":"Long","type":"number"},{"format":"default","groupChar":"","name":"Confirmed","title":"Cumulative total confirmed cases to date","type":"integer"},{"format":"default","groupChar":"","name":"Deaths","title":"Cumulative total deaths to date","type":"integer"}],"missingValues":["None",""]},"signed":true,"prettyBytes":"715kB"},{"bytes":3018727,"datahub":{"derivedFrom":["time-series-19-covid-combined"],"type":"derived/json"},"delimiter":",","dialect":{"caseSensitiveHeader":false,"delimiter":",","doubleQuote":true,"header":true,"lineTerminator":"\\r\\n","quoteChar":"\\"","skipInitialSpace":false},"dpp:streamedFrom":"https://s3.amazonaws.com/rawstore.datahub.io/a6cf143e0590042abb22025e558c2191.csv","encoding":"utf-8","format":"json","hash":"4e3cc1df1bd28c9b864c62f4c31c28fb","mediatype":"text/csv","name":"time-series-19-covid-combined_json","path":"https://pkgstore.datahub.io/core/covid-19/time-series-19-covid-combined_json/data/4e3cc1df1bd28c9b864c62f4c31c28fb/time-series-19-covid-combined_json.json","pathType":"local","profile":"tabular-data-resource","quotechar":"\\"","rowcount":16120,"schema":{"fields":[{"format":"%Y-%m-%d","name":"Date","type":"date"},{"format":"default","name":"Country/Region","type":"string"},{"format":"default","name":"Province/State","type":"string"},{"decimalChar":".","format":"default","groupChar":"","name":"Lat","type":"number"},{"decimalChar":".","format":"default","groupChar":"","name":"Long","type":"number"},{"format":"default","groupChar":"","name":"Confirmed","title":"Cumulative total confirmed cases to date","type":"integer"},{"format":"default","groupChar":"","name":"Deaths","title":"Cumulative total deaths to date","type":"integer"}],"missingValues":["None",""]},"signed":true,"prettyBytes":"3MB"},{"bytes":1752093,"datahub":{"derivedFrom":["time-series-19-covid-combined"],"type":"derived/preview"},"delimiter":",","dialect":{"caseSensitiveHeader":false,"delimiter":",","doubleQuote":true,"header":true,"lineTerminator":"\\r\\n","quoteChar":"\\"","skipInitialSpace":false},"dpp:streamedFrom":"/tmp/tmpxy2h2d4h/core/covid-19/time-series-19-covid-combined_csv/data/0e19819c40014068ad1a1de38e3e6573/time-series-19-covid-combined_csv.csv","encoding":"utf-8","forView":["datahub-preview-time-series-19-covid-combined_csv_preview"],"format":"json","hash":"c1085d5b2a980b46434ee60725b38b3c","mediatype":"text/csv","name":"time-series-19-covid-combined_csv_preview","path":"https://pkgstore.datahub.io/core/covid-19/time-series-19-covid-combined_csv_preview/data/c1085d5b2a980b46434ee60725b38b3c/time-series-19-covid-combined_csv_preview.json","pathType":"local","profile":"tabular-data-resource","quotechar":"\\"","rowcount":18120,"schema":{"fields":[{"format":"%Y-%m-%d","name":"Date","type":"date"},{"format":"default","name":"Country/Region","type":"string"},{"format":"default","name":"Province/State","type":"string"},{"decimalChar":".","format":"default","groupChar":"","name":"Lat","type":"number"},{"decimalChar":".","format":"default","groupChar":"","name":"Long","type":"number"},{"format":"default","groupChar":"","name":"Confirmed","title":"Cumulative total confirmed cases to date","type":"integer"},{"format":"default","groupChar":"","name":"Deaths","title":"Cumulative total deaths to date","type":"integer"}],"missingValues":["None",""]},"signed":true,"prettyBytes":"2MB"}],"prettyBytes":"1MB","report":"{\\\\\\"time\\\\\\":5.311,\\\\\\"valid\\\\\\":true,\\\\\\"error-count\\\\\\":0,\\\\\\"table-count\\\\\\":1,\\\\\\"tables\\\\\\":[{\\\\\\"time\\\\\\":5.133,\\\\\\"valid\\\\\\":true,\\\\\\"error-count\\\\\\":0,\\\\\\"row-count\\\\\\":1000,\\\\\\"source\\\\\\":\\\\\\"https://s3.amazonaws.com/rawstore.datahub.io/a6cf143e0590042abb22025e558c2191.csv\\\\\\",\\\\\\"headers\\\\\\":[\\\\\\"Date\\\\\\",\\\\\\"Country/Region\\\\\\",\\\\\\"Province/State\\\\\\",\\\\\\"Lat\\\\\\",\\\\\\"Long\\\\\\",\\\\\\"Confirmed\\\\\\",\\\\\\"Deaths\\\\\\"],\\\\\\"scheme\\\\\\":\\\\\\"https\\\\\\",\\\\\\"format\\\\\\":\\\\\\"csv\\\\\\",\\\\\\"encoding\\\\\\":\\\\\\"iso8859-1\\\\\\",\\\\\\"schema\\\\\\":\\\\\\"table-schema\\\\\\",\\\\\\"errors\\\\\\":[]}],\\\\\\"warnings\\\\\\":[\\\\\\"Table https://s3.amazonaws.com/rawstore.datahub.io/a6cf143e0590042abb22025e558c2191.csv inspection has reached 1000 row(s) limit\\\\\\"],\\\\\\"preset\\\\\\":\\\\\\"table\\\\\\",\\\\\\"resource\\\\\\":\\\\\\"time-series-19-covid-combined\\\\\\"}","reportObj":{"time":5.311,"valid":true,"error-count":0,"table-count":1,"tables":[{"time":5.133,"valid":true,"error-count":0,"row-count":1000,"source":"https://s3.amazonaws.com/rawstore.datahub.io/a6cf143e0590042abb22025e558c2191.csv","headers":["Date","Country/Region","Province/State","Lat","Long","Confirmed","Deaths"],"scheme":"https","format":"csv","encoding":"iso8859-1","schema":"table-schema","errors":[]}],"warnings":["Table \\"https://s3.amazonaws.com/rawstore.datahub.io/a6cf143e0590042abb22025e558c2191.csv\\" inspection has reached 1000 row(s) limit"],"preset":"table","resource":"time-series-19-covid-combined"}},{"bytes":5616,"datahub":{"derivedFrom":["key-countries-pivoted"],"type":"derived/csv"},"delimiter":",","dialect":{"delimiter":",","doubleQuote":true,"lineTerminator":"\\r\\n","quoteChar":"\\"","skipInitialSpace":false},"dpp:streamedFrom":"https://s3.amazonaws.com/rawstore.datahub.io/6272f42ef39cd13d6e6fa88e44b48f01.csv","encoding":"utf-8","format":"csv","hash":"857f831c317b64e579c76e7c0a0ab289","mediatype":"text/csv","name":"key-countries-pivoted","path":"https://pkgstore.datahub.io/core/covid-19/key-countries-pivoted_csv/data/857f831c317b64e579c76e7c0a0ab289/key-countries-pivoted_csv.csv","pathType":"local","profile":"data-resource","quotechar":"\\"","rowcount":65,"schema":{"fields":[{"format":"%Y-%m-%d","name":"Date","type":"date"},{"description":"Cumulative total confirmed cases to date.","name":"China","type":"integer"},{"description":"Cumulative total confirmed cases to date.","name":"US","type":"integer"},{"description":"Cumulative total confirmed cases to date.","name":"United_Kingdom","type":"integer"},{"description":"Cumulative total confirmed cases to date.","name":"Italy","type":"integer"},{"description":"Cumulative total confirmed cases to date.","name":"France","type":"integer"},{"description":"Cumulative total confirmed cases to date.","name":"Germany","type":"integer"},{"description":"Cumulative total confirmed cases to date.","name":"Spain","type":"integer"},{"description":"Cumulative total confirmed cases to date.","name":"Iran","type":"integer"}],"missingValues":["None",""]},"signed":true,"title":"","description":"","alternates":[{"bytes":2808,"datahub":{"type":"source/tabular"},"delimiter":",","dialect":{"delimiter":",","doubleQuote":true,"lineTerminator":"\\r\\n","quoteChar":"\\"","skipInitialSpace":false},"dpp:streamedFrom":"https://s3.amazonaws.com/rawstore.datahub.io/6272f42ef39cd13d6e6fa88e44b48f01.csv","encoding":"ISO-8859-1","format":"csv","hash":"6272f42ef39cd13d6e6fa88e44b48f01","mediatype":"text/csv","name":"key-countries-pivoted","path":"https://pkgstore.datahub.io/core/covid-19/key-countries-pivoted/archive/6272f42ef39cd13d6e6fa88e44b48f01/key-countries-pivoted.csv","pathType":"local","profile":"data-resource","quotechar":"\\"","schema":{"fields":[{"format":"%Y-%m-%d","name":"Date","type":"date"},{"description":"Cumulative total confirmed cases to date.","name":"China","type":"integer"},{"description":"Cumulative total confirmed cases to date.","name":"US","type":"integer"},{"description":"Cumulative total confirmed cases to date.","name":"United_Kingdom","type":"integer"},{"description":"Cumulative total confirmed cases to date.","name":"Italy","type":"integer"},{"description":"Cumulative total confirmed cases to date.","name":"France","type":"integer"},{"description":"Cumulative total confirmed cases to date.","name":"Germany","type":"integer"},{"description":"Cumulative total confirmed cases to date.","name":"Spain","type":"integer"},{"description":"Cumulative total confirmed cases to date.","name":"Iran","type":"integer"}],"missingValues":["None",""]},"signed":true,"prettyBytes":"3kB"},{"bytes":11990,"datahub":{"derivedFrom":["key-countries-pivoted"],"type":"derived/json"},"delimiter":",","dialect":{"delimiter":",","doubleQuote":true,"lineTerminator":"\\r\\n","quoteChar":"\\"","skipInitialSpace":false},"dpp:streamedFrom":"https://s3.amazonaws.com/rawstore.datahub.io/6272f42ef39cd13d6e6fa88e44b48f01.csv","encoding":"utf-8","format":"json","hash":"25a1e4289066d0e498a1f2fd2672244a","mediatype":"text/csv","name":"key-countries-pivoted_json","path":"https://pkgstore.datahub.io/core/covid-19/key-countries-pivoted_json/data/25a1e4289066d0e498a1f2fd2672244a/key-countries-pivoted_json.json","pathType":"local","profile":"data-resource","quotechar":"\\"","rowcount":65,"schema":{"fields":[{"format":"%Y-%m-%d","name":"Date","type":"date"},{"description":"Cumulative total confirmed cases to date.","name":"China","type":"integer"},{"description":"Cumulative total confirmed cases to date.","name":"US","type":"integer"},{"description":"Cumulative total confirmed cases to date.","name":"United_Kingdom","type":"integer"},{"description":"Cumulative total confirmed cases to date.","name":"Italy","type":"integer"},{"description":"Cumulative total confirmed cases to date.","name":"France","type":"integer"},{"description":"Cumulative total confirmed cases to date.","name":"Germany","type":"integer"},{"description":"Cumulative total confirmed cases to date.","name":"Spain","type":"integer"},{"description":"Cumulative total confirmed cases to date.","name":"Iran","type":"integer"}],"missingValues":["None",""]},"signed":true,"prettyBytes":"12kB"}],"prettyBytes":"5kB","report":"{\\\\\\"time\\\\\\":0.583,\\\\\\"valid\\\\\\":true,\\\\\\"error-count\\\\\\":0,\\\\\\"table-count\\\\\\":1,\\\\\\"tables\\\\\\":[{\\\\\\"time\\\\\\":0.524,\\\\\\"valid\\\\\\":true,\\\\\\"error-count\\\\\\":0,\\\\\\"row-count\\\\\\":66,\\\\\\"source\\\\\\":\\\\\\"https://s3.amazonaws.com/rawstore.datahub.io/6272f42ef39cd13d6e6fa88e44b48f01.csv\\\\\\",\\\\\\"headers\\\\\\":[\\\\\\"Date\\\\\\",\\\\\\"China\\\\\\",\\\\\\"US\\\\\\",\\\\\\"United_Kingdom\\\\\\",\\\\\\"Italy\\\\\\",\\\\\\"France\\\\\\",\\\\\\"Germany\\\\\\",\\\\\\"Spain\\\\\\",\\\\\\"Iran\\\\\\"],\\\\\\"scheme\\\\\\":\\\\\\"https\\\\\\",\\\\\\"format\\\\\\":\\\\\\"csv\\\\\\",\\\\\\"encoding\\\\\\":\\\\\\"iso8859-1\\\\\\",\\\\\\"schema\\\\\\":\\\\\\"table-schema\\\\\\",\\\\\\"errors\\\\\\":[]}],\\\\\\"warnings\\\\\\":[],\\\\\\"preset\\\\\\":\\\\\\"table\\\\\\",\\\\\\"resource\\\\\\":\\\\\\"key-countries-pivoted\\\\\\"}","reportObj":{"time":0.583,"valid":true,"error-count":0,"table-count":1,"tables":[{"time":0.524,"valid":true,"error-count":0,"row-count":66,"source":"https://s3.amazonaws.com/rawstore.datahub.io/6272f42ef39cd13d6e6fa88e44b48f01.csv","headers":["Date","China","US","United_Kingdom","Italy","France","Germany","Spain","Iran"],"scheme":"https","format":"csv","encoding":"iso8859-1","schema":"table-schema","errors":[]}],"warnings":[],"preset":"table","resource":"key-countries-pivoted"}},{"bytes":588366,"datahub":{"derivedFrom":["countries-aggregated"],"type":"derived/csv"},"delimiter":",","dialect":{"delimiter":",","doubleQuote":true,"lineTerminator":"\\r\\n","quoteChar":"\\"","skipInitialSpace":false},"dpp:streamedFrom":"https://s3.amazonaws.com/rawstore.datahub.io/1fadc72466e5d884dcfb310111548e12.csv","encoding":"utf-8","format":"csv","hash":"afb287bde5d24f3028fe60d80a7aad08","mediatype":"text/csv","name":"countries-aggregated","path":"https://pkgstore.datahub.io/core/covid-19/countries-aggregated_csv/data/afb287bde5d24f3028fe60d80a7aad08/countries-aggregated_csv.csv","pathType":"local","profile":"data-resource","quotechar":"\\"","rowcount":11375,"schema":{"fields":[{"format":"%Y-%m-%d","name":"Date","type":"date"},{"format":"default","name":"Country","type":"string"},{"format":"default","groupChar":"","name":"Confirmed","title":"Cumulative total confirmed cases to date","type":"integer"},{"format":"default","groupChar":"","name":"Deaths","title":"Cumulative total deaths to date","type":"integer"}],"missingValues":["None",""]},"signed":true,"title":"","description":"","alternates":[{"bytes":294183,"datahub":{"type":"source/tabular"},"delimiter":",","dialect":{"delimiter":",","doubleQuote":true,"lineTerminator":"\\r\\n","quoteChar":"\\"","skipInitialSpace":false},"dpp:streamedFrom":"https://s3.amazonaws.com/rawstore.datahub.io/1fadc72466e5d884dcfb310111548e12.csv","encoding":"ISO-8859-1","format":"csv","hash":"1fadc72466e5d884dcfb310111548e12","mediatype":"text/csv","name":"countries-aggregated","path":"https://pkgstore.datahub.io/core/covid-19/countries-aggregated/archive/1fadc72466e5d884dcfb310111548e12/countries-aggregated.csv","pathType":"local","profile":"data-resource","quotechar":"\\"","schema":{"fields":[{"format":"%Y-%m-%d","name":"Date","type":"date"},{"format":"default","name":"Country","type":"string"},{"format":"default","groupChar":"","name":"Confirmed","title":"Cumulative total confirmed cases to date","type":"integer"},{"format":"default","groupChar":"","name":"Deaths","title":"Cumulative total deaths to date","type":"integer"}],"missingValues":["None",""]},"signed":true,"prettyBytes":"287kB"},{"bytes":1156956,"datahub":{"derivedFrom":["countries-aggregated"],"type":"derived/json"},"delimiter":",","dialect":{"delimiter":",","doubleQuote":true,"lineTerminator":"\\r\\n","quoteChar":"\\"","skipInitialSpace":false},"dpp:streamedFrom":"https://s3.amazonaws.com/rawstore.datahub.io/1fadc72466e5d884dcfb310111548e12.csv","encoding":"utf-8","format":"json","hash":"45d02da999464a7c698ad666323b371d","mediatype":"text/csv","name":"countries-aggregated_json","path":"https://pkgstore.datahub.io/core/covid-19/countries-aggregated_json/data/45d02da999464a7c698ad666323b371d/countries-aggregated_json.json","pathType":"local","profile":"data-resource","quotechar":"\\"","rowcount":11375,"schema":{"fields":[{"format":"%Y-%m-%d","name":"Date","type":"date"},{"format":"default","name":"Country","type":"string"},{"format":"default","groupChar":"","name":"Confirmed","title":"Cumulative total confirmed cases to date","type":"integer"},{"format":"default","groupChar":"","name":"Deaths","title":"Cumulative total deaths to date","type":"integer"}],"missingValues":["None",""]},"signed":true,"prettyBytes":"1MB"},{"bytes":739269,"datahub":{"derivedFrom":["countries-aggregated"],"type":"derived/preview"},"delimiter":",","dialect":{"delimiter":",","doubleQuote":true,"lineTerminator":"\\r\\n","quoteChar":"\\"","skipInitialSpace":false},"dpp:streamedFrom":"/tmp/tmpxy2h2d4h/core/covid-19/countries-aggregated_csv/data/afb287bde5d24f3028fe60d80a7aad08/countries-aggregated_csv.csv","encoding":"utf-8","forView":["datahub-preview-countries-aggregated_csv_preview"],"format":"json","hash":"818bc06374e8d01d2c7f5fd541acef4e","mediatype":"text/csv","name":"countries-aggregated_csv_preview","path":"https://pkgstore.datahub.io/core/covid-19/countries-aggregated_csv_preview/data/818bc06374e8d01d2c7f5fd541acef4e/countries-aggregated_csv_preview.json","pathType":"local","profile":"data-resource","quotechar":"\\"","rowcount":13375,"schema":{"fields":[{"format":"%Y-%m-%d","name":"Date","type":"date"},{"format":"default","name":"Country","type":"string"},{"format":"default","groupChar":"","name":"Confirmed","title":"Cumulative total confirmed cases to date","type":"integer"},{"format":"default","groupChar":"","name":"Deaths","title":"Cumulative total deaths to date","type":"integer"}],"missingValues":["None",""]},"signed":true,"prettyBytes":"722kB"}],"prettyBytes":"575kB","report":"{\\\\\\"time\\\\\\":1.993,\\\\\\"valid\\\\\\":true,\\\\\\"error-count\\\\\\":0,\\\\\\"table-count\\\\\\":1,\\\\\\"tables\\\\\\":[{\\\\\\"time\\\\\\":1.943,\\\\\\"valid\\\\\\":true,\\\\\\"error-count\\\\\\":0,\\\\\\"row-count\\\\\\":1000,\\\\\\"source\\\\\\":\\\\\\"https://s3.amazonaws.com/rawstore.datahub.io/1fadc72466e5d884dcfb310111548e12.csv\\\\\\",\\\\\\"headers\\\\\\":[\\\\\\"Date\\\\\\",\\\\\\"Country\\\\\\",\\\\\\"Confirmed\\\\\\",\\\\\\"Deaths\\\\\\"],\\\\\\"scheme\\\\\\":\\\\\\"https\\\\\\",\\\\\\"format\\\\\\":\\\\\\"csv\\\\\\",\\\\\\"encoding\\\\\\":\\\\\\"iso8859-1\\\\\\",\\\\\\"schema\\\\\\":\\\\\\"table-schema\\\\\\",\\\\\\"errors\\\\\\":[]}],\\\\\\"warnings\\\\\\":[\\\\\\"Table https://s3.amazonaws.com/rawstore.datahub.io/1fadc72466e5d884dcfb310111548e12.csv inspection has reached 1000 row(s) limit\\\\\\"],\\\\\\"preset\\\\\\":\\\\\\"table\\\\\\",\\\\\\"resource\\\\\\":\\\\\\"countries-aggregated\\\\\\"}","reportObj":{"time":1.993,"valid":true,"error-count":0,"table-count":1,"tables":[{"time":1.943,"valid":true,"error-count":0,"row-count":1000,"source":"https://s3.amazonaws.com/rawstore.datahub.io/1fadc72466e5d884dcfb310111548e12.csv","headers":["Date","Country","Confirmed","Deaths"],"scheme":"https","format":"csv","encoding":"iso8859-1","schema":"table-schema","errors":[]}],"warnings":["Table \\"https://s3.amazonaws.com/rawstore.datahub.io/1fadc72466e5d884dcfb310111548e12.csv\\" inspection has reached 1000 row(s) limit"],"preset":"table","resource":"countries-aggregated"}},{"bytes":5400,"datahub":{"derivedFrom":["worldwide-aggregated"],"type":"derived/csv"},"delimiter":",","dialect":{"delimiter":",","doubleQuote":true,"lineTerminator":"\\r\\n","quoteChar":"\\"","skipInitialSpace":false},"dpp:streamedFrom":"https://s3.amazonaws.com/rawstore.datahub.io/ebd91daa70e3557df6ee7554b4353b1c.csv","encoding":"utf-8","format":"csv","hash":"97071c365010e65b1031a7158d0bf57d","mediatype":"text/csv","name":"worldwide-aggregated","path":"https://pkgstore.datahub.io/core/covid-19/worldwide-aggregated_csv/data/97071c365010e65b1031a7158d0bf57d/worldwide-aggregated_csv.csv","pathType":"local","profile":"data-resource","quotechar":"\\"","rowcount":65,"schema":{"fields":[{"format":"%Y-%m-%d","name":"Date","type":"date"},{"format":"default","groupChar":"","name":"Confirmed","title":"Cumulative total confirmed cases to date","type":"integer"},{"format":"default","groupChar":"","name":"Deaths","title":"Cumulative total deaths to date","type":"integer"},{"decimalChar":".","description":"Inrease rate from the previous day in percentage.","groupChar":"","name":"Increase rate","type":"number"}],"missingValues":["None",""]},"signed":true,"title":"","description":"","alternates":[{"bytes":2700,"datahub":{"type":"source/tabular"},"delimiter":",","dialect":{"delimiter":",","doubleQuote":true,"lineTerminator":"\\r\\n","quoteChar":"\\"","skipInitialSpace":false},"dpp:streamedFrom":"https://s3.amazonaws.com/rawstore.datahub.io/ebd91daa70e3557df6ee7554b4353b1c.csv","encoding":"ISO-8859-2","format":"csv","hash":"ebd91daa70e3557df6ee7554b4353b1c","mediatype":"text/csv","name":"worldwide-aggregated","path":"https://pkgstore.datahub.io/core/covid-19/worldwide-aggregated/archive/ebd91daa70e3557df6ee7554b4353b1c/worldwide-aggregated.csv","pathType":"local","profile":"data-resource","quotechar":"\\"","schema":{"fields":[{"format":"%Y-%m-%d","name":"Date","type":"date"},{"format":"default","groupChar":"","name":"Confirmed","title":"Cumulative total confirmed cases to date","type":"integer"},{"format":"default","groupChar":"","name":"Deaths","title":"Cumulative total deaths to date","type":"integer"},{"decimalChar":".","description":"Inrease rate from the previous day in percentage.","groupChar":"","name":"Increase rate","type":"number"}],"missingValues":["None",""]},"signed":true,"prettyBytes":"3kB"},{"bytes":8878,"datahub":{"derivedFrom":["worldwide-aggregated"],"type":"derived/json"},"delimiter":",","dialect":{"delimiter":",","doubleQuote":true,"lineTerminator":"\\r\\n","quoteChar":"\\"","skipInitialSpace":false},"dpp:streamedFrom":"https://s3.amazonaws.com/rawstore.datahub.io/ebd91daa70e3557df6ee7554b4353b1c.csv","encoding":"utf-8","format":"json","hash":"fdb286e40c5d6d6fa6ec8bc0a4bf2dc5","mediatype":"text/csv","name":"worldwide-aggregated_json","path":"https://pkgstore.datahub.io/core/covid-19/worldwide-aggregated_json/data/fdb286e40c5d6d6fa6ec8bc0a4bf2dc5/worldwide-aggregated_json.json","pathType":"local","profile":"data-resource","quotechar":"\\"","rowcount":65,"schema":{"fields":[{"format":"%Y-%m-%d","name":"Date","type":"date"},{"format":"default","groupChar":"","name":"Confirmed","title":"Cumulative total confirmed cases to date","type":"integer"},{"format":"default","groupChar":"","name":"Deaths","title":"Cumulative total deaths to date","type":"integer"},{"decimalChar":".","description":"Inrease rate from the previous day in percentage.","groupChar":"","name":"Increase rate","type":"number"}],"missingValues":["None",""]},"signed":true,"prettyBytes":"9kB"}],"prettyBytes":"5kB","report":"{\\\\\\"time\\\\\\":0.448,\\\\\\"valid\\\\\\":true,\\\\\\"error-count\\\\\\":0,\\\\\\"table-count\\\\\\":1,\\\\\\"tables\\\\\\":[{\\\\\\"time\\\\\\":0.372,\\\\\\"valid\\\\\\":true,\\\\\\"error-count\\\\\\":0,\\\\\\"row-count\\\\\\":66,\\\\\\"source\\\\\\":\\\\\\"https://s3.amazonaws.com/rawstore.datahub.io/ebd91daa70e3557df6ee7554b4353b1c.csv\\\\\\",\\\\\\"headers\\\\\\":[\\\\\\"Date\\\\\\",\\\\\\"Confirmed\\\\\\",\\\\\\"Deaths\\\\\\",\\\\\\"Increase rate\\\\\\"],\\\\\\"scheme\\\\\\":\\\\\\"https\\\\\\",\\\\\\"format\\\\\\":\\\\\\"csv\\\\\\",\\\\\\"encoding\\\\\\":\\\\\\"iso8859-2\\\\\\",\\\\\\"schema\\\\\\":\\\\\\"table-schema\\\\\\",\\\\\\"errors\\\\\\":[]}],\\\\\\"warnings\\\\\\":[],\\\\\\"preset\\\\\\":\\\\\\"table\\\\\\",\\\\\\"resource\\\\\\":\\\\\\"worldwide-aggregated\\\\\\"}","reportObj":{"time":0.448,"valid":true,"error-count":0,"table-count":1,"tables":[{"time":0.372,"valid":true,"error-count":0,"row-count":66,"source":"https://s3.amazonaws.com/rawstore.datahub.io/ebd91daa70e3557df6ee7554b4353b1c.csv","headers":["Date","Confirmed","Deaths","Increase rate"],"scheme":"https","format":"csv","encoding":"iso8859-2","schema":"table-schema","errors":[]}],"warnings":[],"preset":"table","resource":"worldwide-aggregated"}},{"bytes":364962,"datahub":{"type":"derived/zip"},"description":"Compressed versions of dataset. Includes normalized CSV and JSON data with original data and datapackage.json.","dpp:streamedFrom":"/tmp/773.covid-19.zip","format":"zip","name":"covid-19_zip","path":"https://pkgstore.datahub.io/core/covid-19/covid-19_zip/data/48a28ef78ca451c4fb49d2d6c8691292/covid-19_zip.zip","profile":"data-resource","prettyBytes":"356kB"}],"title":"Novel Coronavirus 2019","views":[{"resources":["worldwide-aggregated"],"spec":{"group":"Date","series":["Confirmed","Deaths"],"type":"line"},"specType":"simple","title":"Total world to date"},{"resources":["key-countries-pivoted"],"spec":{"group":"Date","series":["China","US","United_Kingdom","Italy","France","Germany","Spain","Iran"],"type":"line"},"specType":"simple","title":"Number of confirmed cases in key countries"},{"resources":[{"name":"worldwide-aggregated","transform":[{"asFields":["Mortality rate"],"expressions":["data[\'Deaths\'] / data[\'Confirmed\'] * 100 + \'%\'"],"type":"formula"}]}],"spec":{"group":"Date","series":["Mortality rate"],"type":"bar"},"specType":"simple","title":"Mortality rate in percentage"},{"resources":["worldwide-aggregated"],"spec":{"group":"Date","series":["Increase rate"],"type":"bar"},"specType":"simple","title":"Increase rate from previous day in confirmed cases worldwide"},{"datahub":{"type":"preview"},"name":"datahub-preview-time-series-19-covid-combined_csv_preview","resources":["time-series-19-covid-combined"],"specType":"table","transform":{"limit":2000}},{"datahub":{"type":"preview"},"name":"datahub-preview-key-countries-pivoted_csv_preview","resources":["key-countries-pivoted"],"specType":"table","transform":{"limit":2000}},{"datahub":{"type":"preview"},"name":"datahub-preview-countries-aggregated_csv_preview","resources":["countries-aggregated"],"specType":"table","transform":{"limit":2000}},{"datahub":{"type":"preview"},"name":"datahub-preview-worldwide-aggregated_csv_preview","resources":["worldwide-aggregated"],"specType":"table","transform":{"limit":2000}}],"report":{"bytes":2250,"datahub":{"type":"derived/report"},"description":"Validation report for tabular data","dpp:streamedFrom":"validation_report.json","format":"json","hash":"9aaab5fa08dced883fe0b6b5c9c8c75a","name":"validation_report","path":"https://pkgstore.datahub.io/core/covid-19/validation_report/data/9aaab5fa08dced883fe0b6b5c9c8c75a/validation_report.json","profile":"data-resource","valid":true},"path":"https://pkgstore.datahub.io/core/covid-19/27","readmeSnippet":"Coronavirus disease 2019 (COVID-19) time series listing confirmed cases, reported deaths and reported recoveries. Data is disaggregated by country (and sometimes subregion). Coronavirus disease (COVID-19) is caused by the Severe acute respiratory syndrome Coronavirus 2 (SARS-CoV-2) and has had a","readmeHtml":"<p>Coronavirus disease 2019 (COVID-19) time series listing confirmed cases, reported deaths and reported recoveries. Data is disaggregated by country (and sometimes subregion). Coronavirus disease (COVID-19) is caused by the <a href=\\"https://en.wikipedia.org/wiki/Severe_acute_respiratory_syndrome_coronavirus_2\\">Severe acute respiratory syndrome Coronavirus 2 (SARS-CoV-2)</a> and has had a worldwide effect. On March 11 2020, the World Health Organization (WHO) declared it a pandemic, pointing to the over 118,000 cases of the coronavirus illness in over 110 countries and territories around the world at the time.</p>\\n<p>This dataset includes time series data tracking the number of people affected by COVID-19 worldwide, including:</p>\\n<ul>\\n<li>confirmed tested cases of Coronavirus infection</li>\\n<li>the number of people who have reportedly died while sick with Coronavirus</li>\\n<li>the number of people who have reportedly recovered from it</li>\\n</ul>\\n<h2>Data <a class=\\"header-anchor\\" href=\\"#data\\"><i class=\\"fas fa-link\\"></i></a></h2>\\n<p>Data is in CSV format and updated daily. It is sourced from <a href=\\"https://github.com/CSSEGISandData/COVID-19\\">this upstream repository</a> maintained by the amazing team at <a href=\\"https://systems.jhu.edu/\\">Johns Hopkins University Center for Systems Science and Engineering</a> (CSSE) who have been doing a great public service from an early point by collating data from around the world.</p>\\n<p>We have cleaned and normalized that data, for example tidying dates and consolidating several files into normalized time series. We have also added some metadata such as column descriptions and <a href=\\"https://frictionlessdata.io/data-package/\\">data packaged it</a>.</p>\\n<p>You can view the data, its structure as well as download it in alternative formats (e.g. JSON) from the DataHub:</p>\\n<p><a href=\\"https://datahub.io/core/covid-19\\">https://datahub.io/core/covid-19</a></p>\\n<h3>Sources <a class=\\"header-anchor\\" href=\\"#sources\\"><i class=\\"fas fa-link\\"></i></a></h3>\\n<p>The upstream dataset currently lists the following upstream datasources:</p>\\n<ul>\\n<li>World Health Organization (WHO): <a href=\\"https://www.who.int/\\">https://www.who.int/</a></li>\\n<li><a href=\\"http://DXY.cn\\">DXY.cn</a>. Pneumonia. 2020. <a href=\\"http://3g.dxy.cn/newh5/view/pneumonia\\">http://3g.dxy.cn/newh5/view/pneumonia</a></li>\\n<li>BNO News: <a href=\\"https://bnonews.com/index.php/2020/02/the-latest-coronavirus-cases/\\">https://bnonews.com/index.php/2020/02/the-latest-coronavirus-cases/</a></li>\\n<li>National Health Commission of the People’s Republic of China (NHC): <a href=\\"http://www.nhc.gov.cn/xcs/yqtb/list_gzbd.shtml\\">http://www.nhc.gov.cn/xcs/yqtb/list_gzbd.shtml</a></li>\\n<li>China CDC (CCDC): <a href=\\"http://weekly.chinacdc.cn/news/TrackingtheEpidemic.htm\\">http://weekly.chinacdc.cn/news/TrackingtheEpidemic.htm</a></li>\\n<li>Hong Kong Department of Health: <a href=\\"https://www.chp.gov.hk/en/features/102465.html\\">https://www.chp.gov.hk/en/features/102465.html</a></li>\\n<li>Macau Government: <a href=\\"https://www.ssm.gov.mo/portal/\\">https://www.ssm.gov.mo/portal/</a></li>\\n<li>Taiwan CDC: <a href=\\"https://sites.google.com/cdc.gov.tw/2019ncov/taiwan?authuser=0\\">https://sites.google.com/cdc.gov.tw/2019ncov/taiwan?authuser=0</a></li>\\n<li>US CDC: <a href=\\"https://www.cdc.gov/coronavirus/2019-ncov/index.html\\">https://www.cdc.gov/coronavirus/2019-ncov/index.html</a></li>\\n<li>Government of Canada: <a href=\\"https://www.canada.ca/en/public-health/services/diseases/coronavirus.html\\">https://www.canada.ca/en/public-health/services/diseases/coronavirus.html</a></li>\\n<li>Australia Government Department of Health: <a href=\\"https://www.health.gov.au/news/coronavirus-update-at-a-glance\\">https://www.health.gov.au/news/coronavirus-update-at-a-glance</a></li>\\n<li>European Centre for Disease Prevention and Control (ECDC): <a href=\\"https://www.ecdc.europa.eu/en/geographical-distribution-2019-ncov-cases\\">https://www.ecdc.europa.eu/en/geographical-distribution-2019-ncov-cases</a></li>\\n<li>Ministry of Health Singapore (MOH): <a href=\\"https://www.moh.gov.sg/covid-19\\">https://www.moh.gov.sg/covid-19</a></li>\\n<li>Italy Ministry of Health: <a href=\\"http://www.salute.gov.it/nuovocoronavirus\\">http://www.salute.gov.it/nuovocoronavirus</a></li>\\n</ul>\\n<p>We will endeavour to provide more detail on how regularly and by which technical means the data is updated. Additional background is available in the <a href=\\"https://systems.jhu.edu/research/public-health/ncov/\\">CSSE blog</a>, and in the <a href=\\"https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(20)30120-1/fulltext\\">Lancet paper</a> (<a href=\\"https://doi.org/10.1016/S1473-3099(20)30120-1\\">DOI</a>), which includes this figure:</p>\\n<p><img src=\\"https://i.imgur.com/X32lUEU.png\\" alt /></p>\\n<h2>Preparation <a class=\\"header-anchor\\" href=\\"#preparation\\"><i class=\\"fas fa-link\\"></i></a></h2>\\n<p>This repository uses <a href=\\"https://github.com/datahq/dataflows\\">dataflows</a> to process and normalize the data.</p>\\n<p>You first need to install the dependencies:</p>\\n<pre class=\\"hljs\\"><code>pip install -r scripts/requirements.txt\\n</code></pre>\\n<p>Then run the script</p>\\n<pre class=\\"hljs\\"><code>python scripts/process.py\\n</code></pre>\\n<p><a href=\\"https://www.python.org/downloads/release/python-360/\\"><img src=\\"https://img.shields.io/badge/python-3.6-blue.svg\\" alt=\\"Python 3.6\\" /></a>\\n<img src=\\"https://github.com/datasets/covid-19/workflows/.github/workflows/actions.yml/badge.svg?branch=master\\" alt=\\".github/workflows/actions.yml\\" /></p>\\n<h2>License <a class=\\"header-anchor\\" href=\\"#license\\"><i class=\\"fas fa-link\\"></i></a></h2>\\n<p>This dataset is licensed under the Open Data Commons <a href=\\"https://www.opendatacommons.org/licenses/pddl/1-0/\\">Public Domain and Dedication License</a>.</p>\\n<p>The data comes from a variety public sources and was collated in the first instance via Johns Hopkins University on GitHub. We have used that data and processed it further. Given the public sources and factual nature we believe that there the data is public domain and are therefore releasing the results under the Public Domain Dedication and License. We are also, of course, explicitly licensing any contribution of ours under that license.</p>\\n","formats":["csv","zip"],"downloads":[{"name":"time-series-19-covid-combined","format":"csv","title":"","description":"","prettyBytes":"1MB","download":"https://pkgstore.datahub.io/core/covid-19/time-series-19-covid-combined_csv/data/0e19819c40014068ad1a1de38e3e6573/time-series-19-covid-combined_csv.csv","otherFormats":[{"name":"time-series-19-covid-combined_json","format":"json","prettyBytes":"3MB","download":"https://pkgstore.datahub.io/core/covid-19/time-series-19-covid-combined_json/data/4e3cc1df1bd28c9b864c62f4c31c28fb/time-series-19-covid-combined_json.json"}]},{"name":"key-countries-pivoted","format":"csv","title":"","description":"","prettyBytes":"5kB","download":"https://pkgstore.datahub.io/core/covid-19/key-countries-pivoted_csv/data/857f831c317b64e579c76e7c0a0ab289/key-countries-pivoted_csv.csv","otherFormats":[{"name":"key-countries-pivoted_json","format":"json","prettyBytes":"12kB","download":"https://pkgstore.datahub.io/core/covid-19/key-countries-pivoted_json/data/25a1e4289066d0e498a1f2fd2672244a/key-countries-pivoted_json.json"}]},{"name":"countries-aggregated","format":"csv","title":"","description":"","prettyBytes":"575kB","download":"https://pkgstore.datahub.io/core/covid-19/countries-aggregated_csv/data/afb287bde5d24f3028fe60d80a7aad08/countries-aggregated_csv.csv","otherFormats":[{"name":"countries-aggregated_json","format":"json","prettyBytes":"1MB","download":"https://pkgstore.datahub.io/core/covid-19/countries-aggregated_json/data/45d02da999464a7c698ad666323b371d/countries-aggregated_json.json"}]},{"name":"worldwide-aggregated","format":"csv","title":"","description":"","prettyBytes":"5kB","download":"https://pkgstore.datahub.io/core/covid-19/worldwide-aggregated_csv/data/97071c365010e65b1031a7158d0bf57d/worldwide-aggregated_csv.csv","otherFormats":[{"name":"worldwide-aggregated_json","format":"json","prettyBytes":"9kB","download":"https://pkgstore.datahub.io/core/covid-19/worldwide-aggregated_json/data/fdb286e40c5d6d6fa6ec8bc0a4bf2dc5/worldwide-aggregated_json.json"}]},{"name":"covid-19_zip","format":"zip","description":"Compressed versions of dataset. Includes normalized CSV and JSON data with original data and datapackage.json.","prettyBytes":"356kB","download":"https://pkgstore.datahub.io/core/covid-19/covid-19_zip/data/48a28ef78ca451c4fb49d2d6c8691292/covid-19_zip.zip","otherFormats":[]}]}');
+</script>
+
+
+  <link rel="stylesheet" media="screen" href="/static/dpr-js/dist/main.css">
+  <script type="text/javascript" src="/static/dpr-js/dist/bundle.js"></script>
+
+
+
+
+	
+	<script src="/static/js/emojify.js"></script>
+    <script type="text/javascript" src="/static/js/smoothscroll.min.js"></script>
+	
+    <script>
+      // Emojify text:
+      emojify.setConfig({
+        only_crawl_id    : null,            // Use to restrict where emojify.js applies
+        img_dir          : '/static/img/emoji',  // Directory for emoji images
+        ignored_tags     : {                // Ignore the following tags
+            'SCRIPT'  : 1,
+            'TEXTAREA': 1,
+            'PRE'     : 1,
+            'CODE'    : 1
+        }
+      });
+      emojify.run();
+
+      function getCookie(name) {
+        var value = "; " + document.cookie;
+        var parts = value.split("; " + name + "=");
+        if (parts.length == 2) return parts.pop().split(";").shift();
+      }
+
+      // Set the userid for Google Tags Manager:
+      dataLayer.push({'userId': getCookie('id')});
+
+      function scrollDown(el) {
+        document.querySelector(el.attributes.href.value).scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+      // Popover on avatar icon in navbar and certified
+      jQuery(document).ready(function(){
+        jQuery('[data-toggle="popover"]').popover({
+          'placement': 'bottom',
+          'trigger': 'focus',
+          'html': true
+        });
+
+        $('.certified-tick').attr('data-original-title','<b>Datahub Certified</b> <ul><li>&#x25CF; Quality assured data </li><li>&#x25CF; Sources audited </li><li>&#x25CF; Premium data available for bespoke formatting, additional data and guaranteed updates with SLA</li></ul>');
+        $('[data-toggle="tooltip"]').tooltip({html:true}); 
+        
+      });
+      // Set avatar in navbar using id in cookies
+      var src = `https://www.gravatar.com/avatar/${getCookie('id')}?d=https%3A%2F%2Ftesting.datahub.io%2Fstatic%2Fimg%2Flogo-cube03.png`;
+      var avatar = document.getElementById('avatar');
+      if (avatar) {
+        avatar.src = src;
+      }
+    </script>
+
+
+
+  </body>
+
+</html>

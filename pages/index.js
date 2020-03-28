@@ -1,7 +1,111 @@
 import Head from 'next/head'
 import TimeChart from '../component/TimeChart'
+import fs from 'fs'
+import path from 'path'
 
-const Home = () => (
+const readData = (filePath) => {
+  const file = path.join(process.cwd(), filePath)
+  const fileContents = fs.readFileSync(file, 'utf8')
+  return JSON.parse(fileContents)
+}
+
+const findData = (countriesByDate, selectedDate) => {
+  const dates = Object.keys(countriesByDate)
+  const series = []
+  const countries = []
+
+  const date = selectedDate
+  for (let [key, value] of Object.entries(countriesByDate[date])) {
+    countries.push(key.replace("_", " "))
+    series.push({
+      y: value,
+      name: key
+    })
+  }
+
+  return {
+      dates,
+      series,
+      categories: countries
+  }
+}
+
+export async function getStaticProps() {
+  const parsedData = readData('data/data/key-countries-pivoted_json.json')
+  const countriesByDate = {}
+  parsedData.forEach(item => {
+    const { Date, ...countries } = item
+    countriesByDate[item.Date] = countries
+  })
+  return {
+    props: {
+      countriesByDate
+    }
+  }
+}
+
+export default class Home extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      selectedDate: "2020-01-22",
+      play: false
+    }
+    this.handleChange = this.handleChange.bind(this)
+    this.handlePlay = this.handlePlay.bind(this)
+    this.handleStop = this.handleStop.bind(this)
+  }
+
+  handlePlay() {
+    const self = this
+    this.setState({
+      play: true
+    })
+    this.timer = setInterval(() => {
+      const date = new Date(self.state.selectedDate)
+      date.setDate(date.getDate() + 1)
+      const selectedDate = date.toISOString().split('T')[0]
+      self.setState({
+        selectedDate
+      })
+    }, 500)
+  }
+  handleStop() {
+    this.setState({
+      play: false
+    })
+    if (this.timer) {
+      clearTimeout(this.timer)
+    }
+  }
+  componentWillUnmount() {
+    if (this.timer) {
+      clearTimeout(this.timer)
+    }
+  }
+  handleChange(event) {
+    const { target } = event.nativeEvent
+    const date = target[target.selectedIndex].text
+    this.setState({
+      selectedDate: date
+    })
+  }
+  render() {
+    const {
+      series,
+      categories,
+      dates
+    } = findData(this.props.countriesByDate, this.state.selectedDate)
+    const controls =
+      this.state.play === false ?
+      <button onClick={this.handlePlay}>
+        Play >
+      </button> :
+      <button onClick={this.handleStop}>
+        Stop ||
+      </button>
+
+    return (
   <div className="container">
     <Head>
       <title>Create Next App</title>
@@ -12,11 +116,15 @@ const Home = () => (
       <h1 className="title">
         Corona Virus Application
       </h1>
+      {controls}
 
-      <div>
-        Info
-        <TimeChart/>
-      </div>
+      <select onChange={this.handleChange} value={this.state.selectedDate}>
+      {dates.map(date =>
+        <option value={date} key={date}>{date}</option>
+      )}
+      </select>
+      <TimeChart series={series}
+        categories={categories}/>
     </main>
 
     <footer>
@@ -164,6 +272,6 @@ const Home = () => (
       }
     `}</style>
   </div>
-)
-
-export default Home
+    )
+}
+}

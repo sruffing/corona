@@ -10,21 +10,7 @@ if (typeof Highcharts === 'object') {
 const options = {
     title: {
       text: 'My chart'
-    },
-    series: [{
-      name: 'Test Data',
-      type: 'line',
-      data: [{
-          x: 1,
-          y: 9,
-          name: "Point 2"
-      },
-      { x: 2,
-        y:4,
-        name: "Point 1"
-        }
-      ]
-    }]
+    }
   }
 
 export default class TimeChart extends Component {
@@ -33,6 +19,7 @@ export default class TimeChart extends Component {
         this.chartComponent = React.createRef();
     }
     componentDidMount(){
+        debugger
         const container = this.chartComponent.current.container.current;
         const table = document.getElementsByClassName('table')[0];
 
@@ -40,10 +27,23 @@ export default class TimeChart extends Component {
         this.chartComponent.current.chart.reflow();
       }
     render() {
+        const chartOptions = {
+          series: [{
+            name: 'Test Data',
+            type: 'bar',
+            data: this.props.series
+          }],
+          ...options
+        }
+        if (this.props.categories) {
+          chartOptions.xAxis = {
+            categories: this.props.categories
+          }
+        }
         return (
             <HighchartsReact className="chart"
                 highcharts={Highcharts}
-                options={options}
+                options={chartOptions}
                 ref={this.chartComponent}
             />
         )
