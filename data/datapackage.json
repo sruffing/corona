@@ -1,21 +1,21 @@
 {
-  "bytes": 7004875,
-  "count_of_rows": 28182,
+  "bytes": 7340191,
+  "count_of_rows": 29376,
   "datahub": {
     "created": "2020-03-22T16:03:58.514457",
     "findability": "published",
-    "flowid": "core/covid-19/32",
-    "modified": "2020-03-28T18:10:54.975194",
+    "flowid": "core/covid-19/39",
+    "modified": "2020-03-30T12:11:46.880049",
     "owner": "core",
     "ownerid": "core"
   },
-  "hash": "5eedc3cff3b45117209ed2bf98cf792a",
+  "hash": "35255a1bec05d27eaa0c39401ee2560a",
   "id": "core/covid-19",
   "name": "covid-19",
   "profile": "data-package",
   "resources": [
     {
-      "bytes": 775432,
+      "bytes": 818352,
       "datahub": {
         "type": "original"
       },
@@ -28,10 +28,10 @@
         "quoteChar": "\"",
         "skipInitialSpace": false
       },
-      "dpp:streamedFrom": "https://s3.amazonaws.com/rawstore.datahub.io/b4f06f27e821953eefa6709ebfede5b8.csv",
+      "dpp:streamedFrom": "https://s3.amazonaws.com/rawstore.datahub.io/5800b6ac8f35dbb2a60d81d5104f718e.csv",
       "encoding": "ISO-8859-1",
       "format": "csv",
-      "hash": "b4f06f27e821953eefa6709ebfede5b8",
+      "hash": "5800b6ac8f35dbb2a60d81d5104f718e",
       "mediatype": "text/csv",
       "name": "time-series-19-covid-combined_original",
       "path": "archive/time-series-19-covid-combined.csv",
@@ -97,7 +97,7 @@
       }
     },
     {
-      "bytes": 2869,
+      "bytes": 2991,
       "datahub": {
         "type": "original"
       },
@@ -108,10 +108,10 @@
         "quoteChar": "\"",
         "skipInitialSpace": false
       },
-      "dpp:streamedFrom": "https://s3.amazonaws.com/rawstore.datahub.io/5ab4aa2ba34693bb39c244a96f93ecae.csv",
+      "dpp:streamedFrom": "https://s3.amazonaws.com/rawstore.datahub.io/2b4f7181cf9153b9f5a9071289fa1330.csv",
       "encoding": "ISO-8859-1",
       "format": "csv",
-      "hash": "5ab4aa2ba34693bb39c244a96f93ecae",
+      "hash": "2b4f7181cf9153b9f5a9071289fa1330",
       "mediatype": "text/csv",
       "name": "key-countries-pivoted_original",
       "path": "archive/key-countries-pivoted.csv",
@@ -172,7 +172,7 @@
       }
     },
     {
-      "bytes": 325000,
+      "bytes": 337665,
       "datahub": {
         "type": "original"
       },
@@ -183,10 +183,10 @@
         "quoteChar": "\"",
         "skipInitialSpace": false
       },
-      "dpp:streamedFrom": "https://s3.amazonaws.com/rawstore.datahub.io/a935edc52366c454854a576add9e6674.csv",
+      "dpp:streamedFrom": "https://s3.amazonaws.com/rawstore.datahub.io/cdcb82b41fe747aa81b84186491e9f80.csv",
       "encoding": "ISO-8859-1",
       "format": "csv",
-      "hash": "a935edc52366c454854a576add9e6674",
+      "hash": "cdcb82b41fe747aa81b84186491e9f80",
       "mediatype": "text/csv",
       "name": "countries-aggregated_original",
       "path": "archive/countries-aggregated.csv",
@@ -233,7 +233,7 @@
       }
     },
     {
-      "bytes": 3109,
+      "bytes": 3208,
       "datahub": {
         "type": "original"
       },
@@ -244,10 +244,10 @@
         "quoteChar": "\"",
         "skipInitialSpace": false
       },
-      "dpp:streamedFrom": "https://s3.amazonaws.com/rawstore.datahub.io/b2a703cf71c8c8577c0ab751a806dda0.csv",
+      "dpp:streamedFrom": "https://s3.amazonaws.com/rawstore.datahub.io/916d4982a898a5d314897183839ad4fd.csv",
       "encoding": "ISO-8859-2",
       "format": "csv",
-      "hash": "b2a703cf71c8c8577c0ab751a806dda0",
+      "hash": "916d4982a898a5d314897183839ad4fd",
       "mediatype": "text/csv",
       "name": "worldwide-aggregated_original",
       "path": "archive/worldwide-aggregated.csv",
@@ -301,15 +301,15 @@
         "type": "derived/report"
       },
       "description": "Validation report for tabular data",
-      "dpp:streamedFrom": "/tmp/tmpp7mcekzc/core/covid-19/validation_report/data/1b86a43e626d18a431bae0325e5cf6c6/validation_report.json",
+      "dpp:streamedFrom": "/tmp/tmp_ji1zncf/core/covid-19/validation_report/data/d47fb4e9228fa7fd7c83fb6b8db3319a/validation_report.json",
       "format": "json",
-      "hash": "1b86a43e626d18a431bae0325e5cf6c6",
+      "hash": "d47fb4e9228fa7fd7c83fb6b8db3319a",
       "name": "validation_report",
       "path": "data/validation_report.json",
       "profile": "data-resource"
     },
     {
-      "bytes": 775432,
+      "bytes": 818352,
       "datahub": {
         "derivedFrom": [
           "time-series-19-covid-combined"
@@ -326,17 +326,17 @@
         "quoteChar": "\"",
         "skipInitialSpace": false
       },
-      "dpp:streamedFrom": "/tmp/tmpp7mcekzc/core/covid-19/time-series-19-covid-combined_csv/data/323db5bde9277f3826088fe4026cc304/time-series-19-covid-combined_csv.csv",
+      "dpp:streamedFrom": "/tmp/tmp_ji1zncf/core/covid-19/time-series-19-covid-combined_csv/data/3ef86fbde9e6786491b9edd0c3f9d06f/time-series-19-covid-combined_csv.csv",
       "encoding": "utf-8",
       "format": "csv",
-      "hash": "323db5bde9277f3826088fe4026cc304",
+      "hash": "3ef86fbde9e6786491b9edd0c3f9d06f",
       "mediatype": "text/csv",
       "name": "time-series-19-covid-combined_csv",
       "path": "data/time-series-19-covid-combined_csv.csv",
       "pathType": "local",
       "profile": "tabular-data-resource",
       "quotechar": "\"",
-      "rowcount": 16434,
+      "rowcount": 17204,
       "schema": {
         "fields": [
           {
@@ -398,7 +398,7 @@
       "signed": true
     },
     {
-      "bytes": 2869,
+      "bytes": 2991,
       "datahub": {
         "derivedFrom": [
           "key-countries-pivoted"
@@ -413,17 +413,17 @@
         "quoteChar": "\"",
         "skipInitialSpace": false
       },
-      "dpp:streamedFrom": "/tmp/tmpp7mcekzc/core/covid-19/key-countries-pivoted_csv/data/bcd4e9d3c8affaaa120e36967117b641/key-countries-pivoted_csv.csv",
+      "dpp:streamedFrom": "/tmp/tmp_ji1zncf/core/covid-19/key-countries-pivoted_csv/data/36758318793b5e1ee3626efd79efe5b9/key-countries-pivoted_csv.csv",
       "encoding": "utf-8",
       "format": "csv",
-      "hash": "bcd4e9d3c8affaaa120e36967117b641",
+      "hash": "36758318793b5e1ee3626efd79efe5b9",
       "mediatype": "text/csv",
       "name": "key-countries-pivoted_csv",
       "path": "data/key-countries-pivoted_csv.csv",
       "pathType": "local",
       "profile": "data-resource",
       "quotechar": "\"",
-      "rowcount": 66,
+      "rowcount": 68,
       "schema": {
         "fields": [
           {
@@ -480,7 +480,7 @@
       "signed": true
     },
     {
-      "bytes": 325000,
+      "bytes": 337665,
       "datahub": {
         "derivedFrom": [
           "countries-aggregated"
@@ -495,17 +495,17 @@
         "quoteChar": "\"",
         "skipInitialSpace": false
       },
-      "dpp:streamedFrom": "/tmp/tmpp7mcekzc/core/covid-19/countries-aggregated_csv/data/87361609252ec95e01ee4d00e236c287/countries-aggregated_csv.csv",
+      "dpp:streamedFrom": "/tmp/tmp_ji1zncf/core/covid-19/countries-aggregated_csv/data/ceed5a6fda259cebd41dc253c36639e5/countries-aggregated_csv.csv",
       "encoding": "utf-8",
       "format": "csv",
-      "hash": "87361609252ec95e01ee4d00e236c287",
+      "hash": "ceed5a6fda259cebd41dc253c36639e5",
       "mediatype": "text/csv",
       "name": "countries-aggregated_csv",
       "path": "data/countries-aggregated_csv.csv",
       "pathType": "local",
       "profile": "data-resource",
       "quotechar": "\"",
-      "rowcount": 11616,
+      "rowcount": 12036,
       "schema": {
         "fields": [
           {
@@ -548,7 +548,7 @@
       "signed": true
     },
     {
-      "bytes": 3109,
+      "bytes": 3208,
       "datahub": {
         "derivedFrom": [
           "worldwide-aggregated"
@@ -563,17 +563,17 @@
         "quoteChar": "\"",
         "skipInitialSpace": false
       },
-      "dpp:streamedFrom": "/tmp/tmpp7mcekzc/core/covid-19/worldwide-aggregated_csv/data/08fcb5893621c0085a453be5f78c8ffb/worldwide-aggregated_csv.csv",
+      "dpp:streamedFrom": "/tmp/tmp_ji1zncf/core/covid-19/worldwide-aggregated_csv/data/ab35906167d23b7c673b965b24b00b92/worldwide-aggregated_csv.csv",
       "encoding": "utf-8",
       "format": "csv",
-      "hash": "08fcb5893621c0085a453be5f78c8ffb",
+      "hash": "ab35906167d23b7c673b965b24b00b92",
       "mediatype": "text/csv",
       "name": "worldwide-aggregated_csv",
       "path": "data/worldwide-aggregated_csv.csv",
       "pathType": "local",
       "profile": "data-resource",
       "quotechar": "\"",
-      "rowcount": 66,
+      "rowcount": 68,
       "schema": {
         "fields": [
           {
@@ -618,7 +618,7 @@
       "signed": true
     },
     {
-      "bytes": 2593331,
+      "bytes": 2721397,
       "datahub": {
         "derivedFrom": [
           "time-series-19-covid-combined"
@@ -635,17 +635,17 @@
         "quoteChar": "\"",
         "skipInitialSpace": false
       },
-      "dpp:streamedFrom": "/tmp/tmpp7mcekzc/core/covid-19/time-series-19-covid-combined_json/data/f0949825d913b6f86d48b369ead3039f/time-series-19-covid-combined_json.json",
+      "dpp:streamedFrom": "/tmp/tmp_ji1zncf/core/covid-19/time-series-19-covid-combined_json/data/698009a8089880f873ec98c967e12fb3/time-series-19-covid-combined_json.json",
       "encoding": "utf-8",
       "format": "json",
-      "hash": "f0949825d913b6f86d48b369ead3039f",
+      "hash": "698009a8089880f873ec98c967e12fb3",
       "mediatype": "text/csv",
       "name": "time-series-19-covid-combined_json",
       "path": "data/time-series-19-covid-combined_json.json",
       "pathType": "local",
       "profile": "tabular-data-resource",
       "quotechar": "\"",
-      "rowcount": 16434,
+      "rowcount": 17204,
       "schema": {
         "fields": [
           {
@@ -707,7 +707,7 @@
       "signed": true
     },
     {
-      "bytes": 9342,
+      "bytes": 9662,
       "datahub": {
         "derivedFrom": [
           "key-countries-pivoted"
@@ -722,17 +722,17 @@
         "quoteChar": "\"",
         "skipInitialSpace": false
       },
-      "dpp:streamedFrom": "/tmp/tmpp7mcekzc/core/covid-19/key-countries-pivoted_json/data/ace907f75f2941ea7a6a09e21952611b/key-countries-pivoted_json.json",
+      "dpp:streamedFrom": "/tmp/tmp_ji1zncf/core/covid-19/key-countries-pivoted_json/data/b9c977ab9546fbbed65b26fe8ad6d5b2/key-countries-pivoted_json.json",
       "encoding": "utf-8",
       "format": "json",
-      "hash": "ace907f75f2941ea7a6a09e21952611b",
+      "hash": "b9c977ab9546fbbed65b26fe8ad6d5b2",
       "mediatype": "text/csv",
       "name": "key-countries-pivoted_json",
       "path": "data/key-countries-pivoted_json.json",
       "pathType": "local",
       "profile": "data-resource",
       "quotechar": "\"",
-      "rowcount": 66,
+      "rowcount": 68,
       "schema": {
         "fields": [
           {
@@ -789,7 +789,7 @@
       "signed": true
     },
     {
-      "bytes": 1068516,
+      "bytes": 1107793,
       "datahub": {
         "derivedFrom": [
           "countries-aggregated"
@@ -804,17 +804,17 @@
         "quoteChar": "\"",
         "skipInitialSpace": false
       },
-      "dpp:streamedFrom": "/tmp/tmpp7mcekzc/core/covid-19/countries-aggregated_json/data/79c08f627287183f6841f9cc642dff80/countries-aggregated_json.json",
+      "dpp:streamedFrom": "/tmp/tmp_ji1zncf/core/covid-19/countries-aggregated_json/data/54fd5d25097dbb94f12e6724473b3fc7/countries-aggregated_json.json",
       "encoding": "utf-8",
       "format": "json",
-      "hash": "79c08f627287183f6841f9cc642dff80",
+      "hash": "54fd5d25097dbb94f12e6724473b3fc7",
       "mediatype": "text/csv",
       "name": "countries-aggregated_json",
       "path": "data/countries-aggregated_json.json",
       "pathType": "local",
       "profile": "data-resource",
       "quotechar": "\"",
-      "rowcount": 11616,
+      "rowcount": 12036,
       "schema": {
         "fields": [
           {
@@ -857,7 +857,7 @@
       "signed": true
     },
     {
-      "bytes": 7555,
+      "bytes": 7790,
       "datahub": {
         "derivedFrom": [
           "worldwide-aggregated"
@@ -872,17 +872,17 @@
         "quoteChar": "\"",
         "skipInitialSpace": false
       },
-      "dpp:streamedFrom": "/tmp/tmpp7mcekzc/core/covid-19/worldwide-aggregated_json/data/69a60252aa561884e3e95c903497f18c/worldwide-aggregated_json.json",
+      "dpp:streamedFrom": "/tmp/tmp_ji1zncf/core/covid-19/worldwide-aggregated_json/data/970cdff03b5796f5e5ad25b22977bf4e/worldwide-aggregated_json.json",
       "encoding": "utf-8",
       "format": "json",
-      "hash": "69a60252aa561884e3e95c903497f18c",
+      "hash": "970cdff03b5796f5e5ad25b22977bf4e",
       "mediatype": "text/csv",
       "name": "worldwide-aggregated_json",
       "path": "data/worldwide-aggregated_json.json",
       "pathType": "local",
       "profile": "data-resource",
       "quotechar": "\"",
-      "rowcount": 66,
+      "rowcount": 68,
       "schema": {
         "fields": [
           {
@@ -928,7 +928,7 @@
     },
     {
       "bytes": 4612,
-      "dpp:streamedFrom": "/tmp/tmpcrha14ce/README.md",
+      "dpp:streamedFrom": "/tmp/tmprgbc838x/README.md",
       "format": "md",
       "name": "readme",
       "path": "README.md"
