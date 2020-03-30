@@ -9,13 +9,15 @@ import Button from 'react-bootstrap/Button'
 export default function MyApp({ Component, pageProps }) {
   return (
     <div>
-      <Navbar bg="light" expand="lg">
-      <Navbar.Brand href="#home">Corona</Navbar.Brand>
+      <Navbar bg="light" expand="md">
+      <Navbar.Brand href="/">Corona</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Link href="/">Home</Nav.Link>
+          <Nav.Link href="/ByDate">By Date</Nav.Link>
           <Nav.Link href="/ByCountry">By Country</Nav.Link>
+          <Nav.Link href="https://github.com/sruffing/corona">About</Nav.Link>
         </Nav>
         <Form inline>
           <FormControl type="text" placeholder="Search" className="mr-sm-2" />

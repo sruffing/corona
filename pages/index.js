@@ -1,6 +1,9 @@
 import Head from "next/head";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import Link from "next/link";
 import { readData } from "../lib/loader";
 
@@ -30,22 +33,37 @@ export default class Home extends React.Component {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <main>
-          <Card style={{ width: "18rem" }}>
-            <Card.Img variant="top" src="/img/countries.jpg" />
-            <Card.Body>
-              <Card.Title>By Country</Card.Title>
-              <Card.Text>View historical information per country</Card.Text>
-              <Link href="/ByCountry">
-                <Button variant="primary">View</Button>
-              </Link>
-            </Card.Body>
-          </Card>
+          <Container>
+            <Row>
+              <Col className="d-flex">
+                <Card className="flex-fill" style={{ width: "18rem" }}>
+                  <Card.Img variant="top" src="/img/bydate.jpg" />
+                  <Card.Body>
+                    <Card.Title>By Date</Card.Title>
+                    <Card.Text>View historical information by date</Card.Text>
+                    <Link href="/ByDate">
+                      <Button variant="primary">View</Button>
+                    </Link>
+                  </Card.Body>
+                </Card>
+              </Col>
+              <Col className="d-flex">
+                <Card className="flex-fill" style={{ width: "18rem" }}>
+                  <Card.Img variant="top" src="/img/countries.jpg" />
+                  <Card.Body>
+                    <Card.Title>By Country</Card.Title>
+                    <Card.Text>
+                      View historical information per country
+                    </Card.Text>
+                    <Link href="/ByCountry">
+                      <Button variant="primary">View</Button>
+                    </Link>
+                  </Card.Body>
+                </Card>
+              </Col>
+            </Row>
+          </Container>
         </main>
-
-        <footer>
-          Project by Scott Ruffing. Data provided by{" "}
-          <a href="https://github.com/datasets/covid-19">Johns Hopkins</a>
-        </footer>
       </div>
     );
   }

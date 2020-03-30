@@ -8,7 +8,7 @@ const findData = (countriesByDate) => {
   const countries = {}
   Object.keys(countriesByDate).map(selectedDate => {
     for (let [key, value] of Object.entries(countriesByDate[selectedDate])) {
-      countries[key.replace("_", " ")] = 1
+      countries[key] = 1
     }
   })
   return {
@@ -49,7 +49,7 @@ export default class Home extends React.Component {
           {countries.map(country =>
               <Card className="text-center" key={country}>
                 <Card.Body>
-                  <Card.Title>{country}</Card.Title>
+                  <Card.Title>{country.replace("_", " ")}</Card.Title>
                   <Link href={`/country/${country}`}>
                     <Button variant="primary">View</Button>
                   </Link>
