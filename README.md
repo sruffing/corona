@@ -2,6 +2,8 @@ Welcome to my Coronavirus React application.
 
 I've worked in React in the past, and moved over heavily into Vue the past 2+ years. In that time, I used Nuxt.js which is based off of [Next.js](https://nextjs.org/). This project is for me to reintroduce myself into the React environment while using some current world issue.
 
+See the [Demo](http://dt8zm10n5rssh.cloudfront.net/)
+
 ## Technologies
 * React
 * Next
