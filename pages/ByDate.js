@@ -2,6 +2,7 @@ import Head from "next/head";
 import TimeChart from "../component/TimeChart";
 import Form from "react-bootstrap/Form";
 import { readData } from "../lib/loader";
+import Col from "react-bootstrap/Col";
 
 const findData = (countriesByDate, selectedDate) => {
   const series = [];
@@ -41,11 +42,13 @@ export default class Home extends React.Component {
     super(props);
     this.state = {
       selectedDate: "2020-01-22",
-      play: false
+      play: false,
+      fixXAxis: true
     };
     this.handleChange = this.handleChange.bind(this);
     this.handlePlay = this.handlePlay.bind(this);
     this.handleStop = this.handleStop.bind(this);
+    this.handleFixXAxis = this.handleFixXAxis.bind(this);
   }
 
   handlePlay() {
@@ -85,6 +88,11 @@ export default class Home extends React.Component {
       selectedDate: date
     });
   }
+  handleFixXAxis(event) {
+    this.setState({
+      fixXAxis: event.target.checked
+    })
+  }
   render() {
     const { series, categories } = findData(
       this.props.countriesByDate,
@@ -116,22 +124,36 @@ export default class Home extends React.Component {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <main>
-          <Form.Group>
-            <Form.Label>Date</Form.Label>
-            <Form.Control
-              as="select"
-              onChange={this.handleChange}
-              value={this.state.selectedDate}
-            >
-              {this.props.dates.map(date => (
-                <option value={date} key={date}>
-                  {date}
-                </option>
-              ))}
-            </Form.Control>
-          </Form.Group>
+          <Form>
+            <Form.Row>
+              <Form.Group as={Col}>
+                <Form.Label>Date</Form.Label>
+                <Form.Control
+                  as="select"
+                  onChange={this.handleChange}
+                  value={this.state.selectedDate}
+                >
+                  {this.props.dates.map(date => (
+                    <option value={date} key={date}>
+                      {date}
+                    </option>
+                  ))}
+                </Form.Control>
+              </Form.Group>
+            </Form.Row>
+            <Form.Row>
+              <Form.Check
+                checked={this.state.fixXAxis}
+                onChange={this.handleFixXAxis}
+                label="Fix X"
+              />
+            </Form.Row>
+          </Form>
           {controls}
-          <TimeChart series={series} categories={categories} />
+          <TimeChart
+            series={series}
+            categories={categories}
+            fixXAxis={this.state.fixXAxis} />
         </main>
       </div>
     );

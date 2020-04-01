@@ -35,7 +35,7 @@ export default class Home extends React.Component {
         <main>
           <Container>
             <Row>
-              <Col className="d-flex">
+              <Col border="light"className="d-flex">
                 <Card className="flex-fill" style={{ width: "18rem" }}>
                   <Card.Img variant="top" src="/img/bydate.jpg" />
                   <Card.Body>

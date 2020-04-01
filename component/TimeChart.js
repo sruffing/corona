@@ -9,8 +9,17 @@ if (typeof Highcharts === 'object') {
 
 const options = {
     title: {
-      text: 'My chart'
+      text: 'Positive Tests by Country'
+    },
+    xAxis: {
+      min: null,
+      max: null
+    },
+    yAxis: {
+      min: null,
+      max: null
     }
+
   }
 
 export default class TimeChart extends Component {
@@ -18,26 +27,26 @@ export default class TimeChart extends Component {
         super()
         this.chartComponent = React.createRef();
     }
-    componentDidMount(){
-        debugger
-        const container = this.chartComponent.current.container.current;
-        const table = document.getElementsByClassName('table')[0];
-
-        container.style.height = table.clientHeight + 'px';
-        this.chartComponent.current.chart.reflow();
-      }
     render() {
         const chartOptions = {
           series: [{
-            name: 'Test Data',
+            name: 'Positive Tests',
             type: 'bar',
             data: this.props.series
           }],
           ...options
         }
+        if (this.props.fixXAxis) {
+          chartOptions.yAxis = {
+            ...chartOptions.yAxis,
+            min: 0,
+            max: 300000
+          }
+        }
         if (this.props.categories) {
           chartOptions.xAxis = {
-            categories: this.props.categories
+            ...chartOptions.xAxis,
+            categories: this.props.categories,
           }
         }
         return (
