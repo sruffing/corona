@@ -15,7 +15,7 @@
     "bootstrap": "^4.4.1",
     "deploy-aws-s3-cloudfront": "^2.3.1",
     "download": "^7.1.0",
-    "highcharts": "^8.0.4",
+    "highcharts": "^9.0.0",
     "highcharts-react-official": "^3.0.0",
     "next": "9.3.2",
     "react": "16.13.1",
