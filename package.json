@@ -11,7 +11,7 @@
     "update-data": "node scripts/updateData.js"
   },
   "dependencies": {
-    "aws-sdk": "^2.648.0",
+    "aws-sdk": "^2.814.0",
     "bootstrap": "^4.4.1",
     "deploy-aws-s3-cloudfront": "^2.3.1",
     "download": "^7.1.0",
